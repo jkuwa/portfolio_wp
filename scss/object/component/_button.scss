@@ -1,0 +1,39 @@
+@use "../../foundation/variables" as *;
+
+/* ----- button ----- */
+.c-button {
+  background: $black-color;
+  color: $white-color;
+}
+
+.c-button--circle {
+  @extend .c-button;
+  display: block;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.c-button--link {
+  @extend .c-button;
+  height: 7rem;
+  border: 4px solid $black-color;
+  border-radius: 3.5rem;
+  display: grid;
+  place-content: center;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  box-sizing: border-box;
+  transform: translateZ(0);
+  overflow: hidden;
+
+  @include breakpoint(tablet) {
+    height: 9rem;
+    border-width: 6px;
+    border-radius: 4.5rem;
+    font-size: 3.2rem;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,97 @@
+@use '../../../foundation/variables' as *;
+
+.p-about {
+  background-color: $bg-color;
+  overflow: hidden;
+
+  @include breakpoint(pc) {
+    padding-bottom: 120px;
+  }
+
+  &__body {
+    margin-top: 52px;
+    width: calc(100% - 70px);
+    max-width: 490px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+
+    @include breakpoint(tablet) {
+      margin-top: 80px;
+      width: calc(100% - 96px * 2);
+      max-width: 730px;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 66px;
+    }
+    @include breakpoint(pc) {
+      width: calc(100% - 147px * 2);
+      max-width: 920px;
+      gap: min(14.1%, 130px);
+    }
+  }
+
+  &__img {
+    position: relative;
+
+    svg {
+      width:229px;
+      height: 315px;
+
+      @include breakpoint(tablet) {
+        width: 250px;
+        height: 344px;
+      }
+      @include breakpoint(pc) {
+        width: 340px;
+        height: 500px;
+      }
+    }
+  }
+
+  &__sns {
+    position: absolute;
+    top: 296px;
+    right: 23px;
+    transform: rotate(-27deg);
+
+    @include breakpoint(tablet) {
+      top: 324.6px;
+      right: 25.8px;
+    }
+    @include breakpoint(pc) {
+      top: 460px;
+      right: 32px;
+    }
+  }
+
+  &__text {
+    @include breakpoint(tablet) {
+      margin-top: 92px;
+      flex: 1;
+      position: relative;
+    }
+    @include breakpoint(pc) {
+      margin-top: 170px;
+    }
+
+    span {
+      font-weight: 700;
+    }
+
+    p:not(:first-child) {
+      margin-top: 1.6rem;
+    }
+
+    a {
+      font-weight: 700;
+      text-decoration: underline;
+      
+      &:focus-visible {
+        border-radius: 2rem;
+      }
+    }
+  }
+}

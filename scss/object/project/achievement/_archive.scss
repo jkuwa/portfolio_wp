@@ -1,0 +1,80 @@
+@use "../../../foundation/variables" as *;
+
+/* ----- archive section ----- */
+.p-archive {
+  padding-block: 100px;
+  background-color: $gray-color;
+
+  @include breakpoint(tablet) {
+    padding-bottom: 80px;
+  }
+  @include breakpoint(pc) {
+    padding: 150px 0 120px;
+  }
+
+  ul {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include breakpoint(tablet) {
+      margin-top: 84px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+    }
+    @include breakpoint(pc) {
+      margin-top: 116px;
+      gap: 64px;
+    }
+
+    > li {
+      width: 100%;
+
+      @include breakpoint(tablet) {
+        width: calc((100% - 50px) / 2);
+      }
+      @include breakpoint(pc) {
+        width: calc((100% - 64px) / 2);
+      }
+    }
+
+    a:hover {
+      opacity: 1;
+
+      figure {
+        transform: rotate(-10deg);
+      }
+    }
+  }
+
+  &__man {
+    width: clamp(129px, 34.4%, 161px);
+    aspect-ratio: 250 / 389;
+    position: absolute;
+    left: -51px;
+    bottom: -144.3px;
+    transform: translateX(-100%);
+
+    @include breakpoint(tablet) {
+      width: 161px;
+      left: -115px;
+      bottom: -154.3px;
+    }
+    @include breakpoint(pc) {
+      width: 250px;
+      left: -223px;
+      bottom: -202.9px;
+    }
+
+    &.is-animated {
+      animation: checkman 3s forwards;
+
+      .c-checkman__arm {
+        animation: armMove 2.5s ease-in-out 3s infinite;
+      }
+    }
+  }
+}

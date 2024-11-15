@@ -1,0 +1,52 @@
+@use '../../foundation/variables' as *;
+
+/* ----- section title ----- */
+.p-secTitle {
+  position: relative;
+  text-align: center;
+
+  h2 {
+    position: relative;
+    font-weight: 700;
+    font-size: 1.2rem;
+
+    @include breakpoint(tablet) {
+      font-size: 1.6rem;
+    }
+
+    span {
+      @include lilita();
+      display: block;
+      font-size: 4.8rem;
+      line-height: 1.15;
+      opacity: 0;
+      transform: scale(1, .8);
+  
+      @include breakpoint(tablet) {
+        font-size: 8rem;
+      }
+      @include breakpoint(pc) {
+        font-size: 8.8rem;
+      }
+    }
+  }
+
+  &__star {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  &.is-animated {
+    span {
+      animation: title .4s cubic-bezier(0.34, 1.56, 0.64, 1) .4s forwards;
+    }
+    .c-star {
+      animation: star .4s cubic-bezier(0.34, 1.56, 0.64, 1) .6s forwards;
+    }
+    .c-number {
+      animation: number .3s  cubic-bezier(.64,.03,.75,.74) forwards;
+    }
+  }
+}

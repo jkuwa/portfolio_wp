@@ -1,0 +1,111 @@
+@use "../../foundation/variables" as *;
+
+/* ----- navigation ----- */
+.p-nav {
+  visibility: hidden;
+  border-radius: 30px 0 0 30px;
+  background: $menu-color;
+  overflow-y: auto;
+  transition: right .4s ease-in-out .1s, visibility .4s ease-in-out .1s;
+
+  @include breakpoint(tablet) {
+    visibility: visible;
+    border-radius: unset;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background: none;
+
+    &__contact {
+      display: none;
+    }
+  }
+
+  @include breakpoint(pc) {
+    gap: 30px;
+  }
+
+  a {
+    display: block;
+
+    @include breakpoint(tablet) {
+      &:hover {
+        opacity: unset;
+      }
+    }
+
+  }
+
+  &__list {
+    width: 100%;
+    color: $white-color;
+    font-size: 3.6rem;
+    font-weight: 700;
+
+    @include breakpoint(tablet) {
+      width: auto;
+      display: flex;
+      color: $font-color;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    @include breakpoint(pc) {
+      gap: 15px;
+    }
+
+    li {
+      padding: 6px 0 16.5px;
+      border-bottom: 1px solid $white-color;
+      line-height: 1.1;
+      overflow: hidden;
+
+      @include breakpoint(tablet) {
+        padding: 0;
+        border-bottom: none;
+        line-height: 1.5;
+        text-shadow: -1px 0 $white-color, 1px 0 $white-color, 0 1px $white-color, 0 -1px $white-color;
+      }
+    }
+  }
+
+  &__sns {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+
+    @include breakpoint(tablet) {
+      margin-top: 0;
+      align-items: center;
+      gap: 20px;
+
+      a {
+        padding: 5px;
+      }
+
+      a:hover span {
+        transform: translateY(-4px);
+      }
+    }
+
+    @include breakpoint(pc) {
+      gap: 30px;
+    }
+  }
+
+  &.is-open {
+    visibility: visible;
+  }
+}
+
+.p-focusTrap {
+  @include breakpoint(tablet) {
+    display: none;
+  }
+}
+
+// メニューを開いた時の背景固定
+body.is-open {
+  height: 100vh;
+  overflow: hidden;
+}

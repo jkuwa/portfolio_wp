@@ -1,0 +1,341 @@
+@use "../../foundation/variables" as *;
+@use "sass:math";
+
+/* ----- illustration ----- */
+.c-img {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.c-number {
+  @extend .c-img;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(-20%);
+  left: 50%;
+
+  &.-fv01 {
+    width: clamp(72.5px, 40.5%, 100px);
+    aspect-ratio: 72.5 / 99;
+    background-image: url(../../../images/1.png);
+    top: max(-68%, -115.85px);
+    left: 73.7%;
+    z-index: 1;
+
+    @include breakpoint(pc) {
+      width: min(27.9%, 130.3px);
+      top: max(-46.8%, -161.7px);
+      left: 76%;
+    }
+  }
+
+  &.-sec02 {
+    margin-left: 40.5px;
+    width: 85px;
+    aspect-ratio: 85 / 105;
+    background-image: url(../../../images/2.png);
+    top: -47px;
+
+    @include breakpoint(tablet) {
+      margin-left: 69px;
+      width: 120px;
+      top: -61px;
+    }
+    @include breakpoint(pc) {
+      margin-left: 75px;
+      width: 140px;
+      top: -72px;
+    }
+  }
+
+  &.-sec03 {
+    margin-left: 36px;
+    width: 88px;
+    aspect-ratio: 88 / 106.6;
+    background-image: url(../../../images/3.png);
+    top: -47.6px;
+
+    @include breakpoint(tablet) {
+      margin-left: 57px;
+      width: 124px;
+      top: -62px;
+    }
+    @include breakpoint(pc) {
+      margin-left: 67px;
+      width: 144px;
+      top: -74px;
+    }
+  }
+
+  &.-sec04 {
+    margin-left: 28px;
+    width: 96px;
+    aspect-ratio: 96 / 108.25;
+    background-image: url(../../../images/4.png);
+    top: -51px;
+
+    @include breakpoint(tablet) {
+      margin-left: 56px;
+      width: 135px;
+      top: -64px;
+    }
+    @include breakpoint(pc) {
+      margin-left: 59px;
+      width: 157.5px;
+      top: -79px;
+    }
+  }
+
+  &.-go {
+    margin-left: -19px;
+    width: 183px;
+    aspect-ratio: 329 / 255;
+    background-image: url(../../../images/go.png);
+    top: -69px;
+
+    @include breakpoint(tablet) {
+      margin-left: -30px;
+      width: 300px;
+      top: -112px;
+    }
+    @include breakpoint(pc) {
+      margin-left: -28px;
+      width: 320px;
+      top: -118px;
+    }
+  }
+}
+
+// header
+.c-alien--header {
+  @extend .c-img;
+  width: 35px;
+  aspect-ratio: 50 / 60;
+  background-image: url(../../../images/nav_alien.svg);
+  display: block;
+  position: relative;
+  transform: translateY(100%);
+  animation: alienMove 10s steps(1) infinite;
+
+  @include breakpoint(pc) {
+    width: 50px;
+  }
+}
+
+// first view
+.c-rocketBoy {
+  @extend .c-img;
+  min-width: 146px;
+  width: 81.6%;
+  aspect-ratio: 146 / 148.2;
+  background-image: url(../../../images/fv_rocketBoy.svg);
+  position: absolute;
+  top: 20.4%;
+  right: 22.7%;
+  z-index: 1;
+  transform: translateX(-100%);
+  animation: floating 1s ease-in-out infinite alternate-reverse;
+}
+
+.c-space {
+  @extend .c-img;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../../images/fv_space.svg);
+  position: relative;
+  z-index: 1;
+  scale: 0;
+}
+
+.c-planet {
+  @extend .c-img;
+  min-width: 55px;
+  width: 30.7%;
+  max-width: 110px;
+  aspect-ratio: 54.99 / 35.14;
+  background-image: url(../../../images/fv_planet-white.svg);
+  position: absolute;
+  top: 14.7%;
+  right: 4.8%;
+  z-index: 1;
+  scale: 0;
+
+  @include breakpoint(pc) {
+    max-width: 143px;
+  }
+
+  // about section
+  &--green {
+    @extend .c-img;
+    width: 76px;
+    aspect-ratio: 1 / 1;
+    background-image: url(../../../images/about_planet-green.svg);
+    position: absolute;
+    top: 0;
+    left: 80.6%;
+    animation: floating 0.6s ease-in-out infinite alternate-reverse;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 17.7px;
+      top: unset;
+      bottom: 100%;
+      right: -23px;
+      left: unset;
+    }
+    @include breakpoint(pc) {
+      margin-bottom: 48.6px;
+      width: 140px;
+      right: -80px;
+    }
+  }
+}
+
+// section title
+.c-star {
+  @extend .c-img;
+  margin-top: 5px;
+  width: 60.25px;
+  aspect-ratio: 60.25 / 39;
+  background-image: url(../../../images/secTitle_star.svg);
+  opacity: 0;
+  transform: scale(1, .8);
+
+  @include breakpoint(tablet) {
+    margin-top: 13px;
+    width: 92.7px;
+  }
+  @include breakpoint(pc) {
+    margin-top: 21px;
+  }
+
+  &.-right {
+    scale: -1 1;
+  }
+}
+
+// about section
+.c-rocket {
+  @extend .c-img;
+  width: 114px;
+  aspect-ratio: 145 / 114.2;
+  background-image: url(../../../images/about_rocket.svg);
+  position: absolute;
+  top: 274px;
+  right: clamp(205px, 48.2vw, 289px);
+  animation: floating 0.6s ease-in-out 0.2s infinite alternate-reverse;
+
+  @include breakpoint(tablet) {
+    width: 145px;
+    top: 315px;
+    right: 182.4px;
+  }
+  @include breakpoint(pc) {
+    width: 225px;
+    top: 384px;
+    right: 254px;
+  }
+}
+
+// UFO
+.c-ufo {
+  @extend .c-img;
+  margin-inline: auto;
+  width: 86.5%;
+  aspect-ratio: 300 / 217;
+  background-image: url(../../../images/skills_ufo.svg);
+  position: relative;
+}
+
+.c-light {
+  @extend .c-img;
+  width: 100%;
+  aspect-ratio: 200 / 164;
+  background-image: url(../../../images/works_light.png);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+// contact section
+.c-alien--contact {
+  @extend .c-img;
+  width: 216px;
+  aspect-ratio: 426 / 372;
+  background-image: url(../../../images/contactSec_alien.svg);
+  position: absolute;
+  bottom: -93px;
+  left: -52px;
+  z-index: 1;
+  transform: translateY(12.5%);
+
+  @include breakpoint(tablet) {
+    width: 723.7px;
+    bottom: -90px;
+    left: -449px;
+  }
+  @include breakpoint(pc) {
+    width: min(92.8vw, 1067px);
+    bottom: -124px;
+    left: unset;
+    right: min(22.2vw, 319.7px);
+  }
+
+  &::before {
+    @extend .c-img;
+    content: "";
+    width: 20%;
+    aspect-ratio: 213 / 201;
+    background-image: url(../../../images/contactSec_alienEyelid.svg);
+    position: absolute;
+    top: 4.3%;
+    left: 25%;
+    opacity: 0;
+    animation: alienEye 4s steps(1) infinite;
+  }
+}
+
+// achievement
+.c-checkman {
+  @extend .c-img;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../../images/archive_checkMan.svg);
+  display: block;
+  position: relative;
+
+  &__arm {
+    @extend .c-img;
+    width: 49.3%;
+    aspect-ratio: 124 / 182;
+    background-image: url(../../../images/archive_checkMan-arm.svg);
+    position: absolute;
+    top: 9.7%;
+    left: 45.8%;
+    transform-origin: left;
+  }
+}
+
+// contact form
+.c-alien--form {
+  @extend .c-img;
+  margin-right: min(29.6%, 368.6px);
+  width: 60px;
+  aspect-ratio: 120 / 113;
+  background-image: url(../../../images/contact_alien.svg);
+  position: absolute;
+  top: -24px;
+  right: 50%;
+  animation: floating 0.8s ease-in-out infinite alternate-reverse;
+
+  @include breakpoint(tablet) {
+    width: 100px;
+    top: -53px;
+  }
+  @include breakpoint(pc) {
+    width: 120px;
+    top: -65px;
+  }
+}

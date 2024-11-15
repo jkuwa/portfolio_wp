@@ -1,0 +1,25 @@
+@use "../../foundation/variables" as *;
+
+/* ----- hover animation ----- */
+.p-navLink {
+  position: relative;
+
+  span {
+    @include breakpoint(tablet) {
+      padding: 0 15px 2px;
+      display: inline-block;
+    }
+  }
+
+  &__after {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-weight: 700;
+
+    @include breakpoint(tablet) {
+      display: inline-block;
+    }
+  }
+}

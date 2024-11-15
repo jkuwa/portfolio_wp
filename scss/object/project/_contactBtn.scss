@@ -1,0 +1,82 @@
+@use "../../foundation/variables" as *;
+@use "sass:math";
+
+/* ----- contact button ----- */
+.p-contactBtn {
+  width: 72px;
+  display: none;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  font-size: 0;
+
+  @include breakpoint(tablet) {
+    display: block;
+  }
+
+  @include breakpoint(pc) {
+    width: 100px;
+  }
+
+  &::before,
+  &::after {
+    @include center();
+    content: "";
+    width: 35px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include breakpoint(pc) {
+      width: 48.6px;
+    }
+  }
+
+  &::before {
+    aspect-ratio: 35 / 17.5;
+    background-image: url(../../../images/nav_mail-top.svg);
+    top: 23.38px;
+    animation: mailMove 10s steps(1) infinite; 
+    transform-origin: top;
+
+    @include breakpoint(pc) {
+      top: 32.5px;
+    }
+  }
+
+  &::after {
+    aspect-ratio: 35 / 18.6;
+    background-image: url(../../../images/nav_mail-under.svg);
+    bottom: 22.41px;
+
+    @include breakpoint(pc) {
+      bottom: 31.1px;
+    }
+  }
+
+  &:hover {
+    opacity: unset;
+    transform: translateY(-4px);
+
+    &::before {
+      animation: unset;
+      transform: scaleY(-1);
+    }
+
+    .c-alien--header {
+      animation: vibration .3s infinite;
+    }
+  }
+
+  &__alien {
+    margin: 6px auto 0; 
+    width: 35px;
+    aspect-ratio: 35 / 43;
+    overflow: hidden;
+
+    @include breakpoint(pc) {
+      margin-top: 3px;
+      width: 50px;
+    }
+  }
+}

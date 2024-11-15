@@ -1,0 +1,14 @@
+@use "../foundation/variables" as *;
+
+/* ----- footer layout ----- */
+.l-footer {
+  padding: 50px 0 43px;
+  width: 100%;
+
+  @include breakpoint(tablet) {
+    padding: 74px 0 72px;
+  }
+  @include breakpoint(pc) {
+    padding: 116px 0 103px;
+  }
+}

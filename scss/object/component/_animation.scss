@@ -1,0 +1,183 @@
+/* ----- contact button animation ----- */
+@keyframes alienMove {
+  0% {
+    transform: translateY(100%);
+  }
+  25% {
+    transform: translateY(60%);
+  }
+  35% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes mailMove {
+  0% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(0.6);
+  }
+  35% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes vibration {
+  0% {
+    transform: translate(0, 20%) rotateZ(0);
+  }
+  25% {
+    transform: translate(2px, calc(20% + 2px)) rotateZ(1deg);
+  }
+  50% {
+    transform: translate(0, calc(20% + 2px)) rotateZ(0);
+  }
+  75% {
+    transform: translate(2px, 20%) rotateZ(-1deg);
+  }
+  100% {
+    transform: translate(0, 20%) rotateZ(0);
+  }
+}
+
+/* ----- rocket boy animation ----- */
+@keyframes floating {
+  0% {
+    translate: 0 -2%;
+  }
+  100% {
+    translate: 0 2%;
+  }
+}
+
+
+/* ----- section title animation ----- */
+@keyframes title {
+  0% {
+    opacity: 0;
+    transform: scale(1, .8) translate(0, 0);
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1, 1.2) translateY(-30%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+@keyframes star {
+  0% {
+    opacity: 0;
+    transform: scale(1, .8) translate(0, 0);
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1, 1.2) translate(-30%, -30%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1) translate(0, 0);
+  }
+}
+
+@keyframes number {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ----- works section animation ----- */
+@keyframes ufoLight {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* ----- contact section ----- */
+@keyframes alienEye {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  57% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* ----- achievement ----- */
+@keyframes checkman {
+  0% {
+    transform: translateX(-100%) rotate(-5deg);
+  }
+  12.5% {
+    transform: translateX(-87.5%) rotate(5deg);
+  }
+  25% {
+    transform: translateX(-75%) rotate(-5deg);
+  }
+  37.5% {
+    transform: translateX(-62.5%) rotate(5deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(-5deg);
+  }
+  62.5% {
+    transform: translateX(-37.5%) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  87.5% {
+    transform: translateX(-12.5%) rotate(5deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+
+@keyframes armMove {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

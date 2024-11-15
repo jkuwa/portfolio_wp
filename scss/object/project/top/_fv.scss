@@ -1,0 +1,63 @@
+@use "../../../foundation/variables" as *;
+
+/* ----- first view ----- */
+.p-fv {
+  padding: 120px 0 158px;
+  width: 100%;
+  min-height: 100vh;
+  background: url(../../../../images/fv_bg.png) top left / 1125px $yellow-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: max(108.4px, 12.5vh);
+  position: relative;
+  overflow: hidden;
+
+  @include breakpoint(tablet) {
+    padding-top: 175px;
+    background-size: 1687px;
+    gap: 115px;
+  }
+
+  @include breakpoint(pc) {
+    padding-top: max(120px, 21.1vh);
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5vw;
+  }
+
+  &__title {
+    @include lilita();
+    text-align: center;
+    scale: 0;
+
+    span {
+      font-size: clamp(2.4rem ,6.4vw, 4rem);
+
+      @include breakpoint(pc) {
+        font-size: 5.6rem;
+      }
+    }
+    
+    h1 {
+      font-size: clamp(4rem, 10.6vw, 8rem);
+      
+      @include breakpoint(pc) {
+        font-size: clamp(8rem, 13.7vh, 9.6rem);
+      }
+    }
+  }
+
+  &__img {
+    width: clamp(179px, 47.7vw, 358.3px);
+    aspect-ratio: 179 / 132.7;
+    background: url(../../../images/bg-fv_rocketBoy.svg) center/contain no-repeat;
+    position: relative;
+  
+    @include breakpoint(pc) {
+      margin-top: min(19.3vh, 174px);
+      width: clamp(358.3px, 32.4vw, 467px);
+    }
+  }
+}

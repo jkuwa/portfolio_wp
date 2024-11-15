@@ -1,0 +1,101 @@
+@use '../../../foundation/variables' as *;
+
+/* ----- contact form ----- */
+.p-form {
+  margin-top: 56px;
+
+  @include breakpoint(tablet) {
+    margin-top: 76px;
+  }
+  @include breakpoint(pc) {
+    margin-top: 96px;
+  }
+
+  ul {
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include breakpoint(pc) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      &:not(:first-child) {
+        margin-top: 40px;
+
+        @include breakpoint(tablet) {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+
+  label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    
+    @include breakpoint(pc) {
+      width: 196px;
+    }
+
+    br {
+      display: none;
+
+      @include breakpoint(pc) {
+        display: block;
+      }
+    }
+
+    span {
+      margin-left: 8px;
+
+      @include breakpoint(tablet) {
+        margin-left: 16px;
+      }
+      @include breakpoint(pc) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  input, textarea {
+    padding: 18px 30px;
+    width: 100%;
+    border-radius: 3rem;
+    background-color: $bg-color;
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    @include breakpoint(tablet) {
+      padding-inline: 46px;
+    }
+    @include breakpoint(pc) {
+      flex: 1;
+    }
+
+    &::placeholder {
+      opacity: .6;
+    }
+  }
+
+  textarea {
+    min-height: 200px;
+  }
+
+  button {
+    margin: 40px auto 0;
+    width: 24.5rem;
+    font-weight: 700;
+
+    @include breakpoint(tablet) {
+      margin-top: 50px;
+      width: 30rem;
+    }
+    @include breakpoint(pc) {
+      margin-top: 100px;
+      width: 34rem;
+    }
+  }
+}

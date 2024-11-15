@@ -1,0 +1,43 @@
+@use '../../../foundation/variables' as *;
+
+.p-works {
+  background-color: $gray-color;
+  overflow-x: hidden;
+
+  &__list {
+    margin-top: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include breakpoint(tablet) {
+      margin-top: 105px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+    @include breakpoint(pc) {
+      column-gap: 64px;
+      row-gap: 50px;
+    }
+
+    li {
+      width: 100%;
+
+      @include breakpoint(tablet) {
+        width: calc((100% - 50px) / 2 );
+      }
+      @include breakpoint(pc) {
+        width: calc((100% - 64px) / 2);
+      }
+
+      a:hover {
+        opacity: 1;
+
+        figure {
+          transform: rotate(-10deg);
+        }
+      }
+    }
+  }
+}
