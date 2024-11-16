@@ -35,39 +35,3 @@
 
     <a href="#contact" class="c-button--circle p-contactBtn"><div class="p-contactBtn__alien"><span class="c-alien--header"></span></div>contact</a>
   </header>
-
-  <main class="l-main p-404">
-    <p class="p-404__text">お探しのページが見つかりません</p>
-    <div class="p-404__title">
-      <h1>404</h1>
-      <div class="c-alien03 -error"></div>
-    </div>
-    <p class="p-404__subTitle">page not found</p>
-    <a href="/index.html">home</a>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="l-footer p-footer js-footer">
-    <ul class="c-outline--list p-footer_sns">
-      <li><a href="#" class="c-icon__x -footer">X</a></li>
-      <li><a href="#" class="c-icon__github -footer">GitHub</a></li>
-    </ul>
-    <small>Copyright &copy; kuwa junna All Rights Reserved.</small>
-  </footer>
-  
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <!-- GSAP -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <!-- magic grid -->
-  <!-- 
-    Copyright (c) 2018 Emmanuel Olaojo
-    Licensed under the MIT license. 
-    https://github.com/e-oj/Magic-Grid/blob/master/LICENSE
-  -->
-  <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
