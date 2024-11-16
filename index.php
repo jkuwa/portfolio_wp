@@ -64,7 +64,6 @@
           <span class="c-star -right"></span>
         </div>
       </div>
-
       <div class="c-wrapper p-about__body">
         <div class="p-about__img">
           <svg viewBox="0 0 382 525" xmlns="http://www.w3.org/2000/svg" class="c-shadow--pink">
@@ -101,7 +100,7 @@
       <ul class="c-wrapper p-skills__list js-grid">
         <li class="p-skill">
           <div class="p-skill__icon">
-            <div class="c-icon__html"><!-- "html5" --></div>
+            <div class="c-icon__html"></div>
           </div>
           <section class="p-skill__desc">
             <h3>HTML</h3>
@@ -111,8 +110,8 @@
 
         <li class="p-skill">
           <div class="p-skill__icon">
-            <div class="c-icon__css"><!-- "css3-alt" --></div> 
-            <div class="c-icon__sass"><!-- "sass-brands-solid" --></div>
+            <div class="c-icon__css"></div>
+            <div class="c-icon__sass"></div>
           </div>
           <section class="p-skill__desc">
             <h3>CSS / Sass</h3>
@@ -122,7 +121,7 @@
 
         <li class="p-skill">
           <div class="p-skill__icon">
-            <div class="c-icon__js"><!-- "js" --></div>
+            <div class="c-icon__js"></div>
             <div class="c-icon__jquery"></div>
           </div>
           <section class="p-skill__desc">
@@ -133,7 +132,7 @@
 
         <li class="p-skill">
           <div class="p-skill__icon">
-            <div class="c-icon__wp"><!-- "wordpress-brands-solid" --></div>
+            <div class="c-icon__wp"></div>
           </div>
           <section class="p-skill__desc">
             <h3>WordPress</h3>
@@ -143,17 +142,15 @@
 
         <li class="p-skill">
           <div class="p-skill__icon">
-            <div class="c-icon__git"><!-- "git-alt--brands-solid" --></div>
-            <div class="c-icon__github -skill"><!-- "github-brands-solid" --></div>
+            <div class="c-icon__git"></div>
+            <div class="c-icon__github -skill"></div>
           </div>
           <section class="p-skill__desc">
             <h3>Git / GitHub</h3>
             <p>GitHubを利用してソースコードのバージョン管理を行っており、チームでの開発経験もあります。</p>
           </section>
-        </li>
+        </li>         
       </ul>
-
-      <!--"html5""css3-alt""sass-brands-solid""js""wordpress-brands-solid""git-alt--brands-solid""github-brands-solid"!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. Licensed under CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/-->
     </section>
 
     <!-- WORKS SECTION -->
@@ -245,9 +242,6 @@
     </ul>
     <small>Copyright &copy; kuwa junna All Rights Reserved.</small>
   </footer>
-
-  <!-- star of section title created by modifying
-    !Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. Licensed under CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/ -->
   
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
