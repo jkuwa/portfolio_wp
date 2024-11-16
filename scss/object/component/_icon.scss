@@ -18,7 +18,7 @@
 .c-icon__x {
   @extend .c-mask;
   aspect-ratio: 1200 / 1227;
-  mask-image: url(../../../images/icons/x_logo.svg);
+  mask-image: url(../images/icons/x_logo.svg);
 
   &.-nav {
     width: 2.8rem;
@@ -55,7 +55,7 @@
 .c-icon__github {
   @extend .c-mask;
   aspect-ratio: 496 / 512;
-  mask-image: url(../../../images/icons/github_logo.svg);
+  mask-image: url(../images/icons/github_logo.svg);
 
   &.-nav {
     width: 3rem;
@@ -90,7 +90,7 @@
   @extend .c-icon;
   width: 69px;
   aspect-ratio: 13 / 15;
-  background-image: url(../../../images/icons/html5_logo.svg);
+  background-image: url(../images/icons/html5_logo.svg);
 
   @include breakpoint(pc) {
     width: 85px;
@@ -101,7 +101,7 @@
   @extend .c-icon;
   width: 68.8px;
   aspect-ratio: 129 / 150;
-  background-image: url(../../../images/icons/css3_logo.svg);
+  background-image: url(../images/icons/css3_logo.svg);
 
   @include breakpoint(pc) {
     width: 82px;
@@ -112,7 +112,7 @@
   @extend .c-icon;
   width: 80px;
   aspect-ratio: 15 / 12;
-  background-image: url(../../../images/icons/sass_logo.svg);
+  background-image: url(../images/icons/sass_logo.svg);
 
   @include breakpoint(pc) {
     width: 95px;
@@ -123,7 +123,7 @@
   @extend .c-icon;
   width: 80px;
   aspect-ratio: 1 / 1;
-  background-image: url(../../../images/icons/js_logo.svg);
+  background-image: url(../images/icons/js_logo.svg);
 
   @include breakpoint(pc) {
     width: 95px;
@@ -134,7 +134,7 @@
   @extend .c-icon;
   width: 100px;
   aspect-ratio: 116 / 29.5;
-  background-image: url(../../../images/icons/jquery_logo.png);
+  background-image: url(../images/icons/jquery_logo.png);
 
   @include breakpoint(pc) {
     width: 137.6px;
@@ -145,7 +145,7 @@
   @extend .c-icon;
   width: 80px;
   aspect-ratio: 1 / 1;
-  background-image: url(../../../images/icons/wordpress_logo.svg);
+  background-image: url(../images/icons/wordpress_logo.svg);
 
   @include breakpoint(pc) {
     width: 95px;
@@ -156,7 +156,7 @@
   @extend .c-icon;
   width: 80px;
   aspect-ratio: 1 / 1;
-  background-image: url(../../../images/icons/git_logo.svg);
+  background-image: url(../images/icons/git_logo.svg);
 
   @include breakpoint(pc) {
     width: 95px;

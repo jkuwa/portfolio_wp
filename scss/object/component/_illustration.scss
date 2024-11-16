@@ -19,7 +19,7 @@
   &.-fv01 {
     width: clamp(72.5px, 40.5%, 100px);
     aspect-ratio: 72.5 / 99;
-    background-image: url(../../../images/1.png);
+    background-image: url(../images/1.png);
     top: max(-68%, -115.85px);
     left: 73.7%;
     z-index: 1;
@@ -35,7 +35,7 @@
     margin-left: 40.5px;
     width: 85px;
     aspect-ratio: 85 / 105;
-    background-image: url(../../../images/2.png);
+    background-image: url(../images/2.png);
     top: -47px;
 
     @include breakpoint(tablet) {
@@ -54,7 +54,7 @@
     margin-left: 36px;
     width: 88px;
     aspect-ratio: 88 / 106.6;
-    background-image: url(../../../images/3.png);
+    background-image: url(../images/3.png);
     top: -47.6px;
 
     @include breakpoint(tablet) {
@@ -73,7 +73,7 @@
     margin-left: 28px;
     width: 96px;
     aspect-ratio: 96 / 108.25;
-    background-image: url(../../../images/4.png);
+    background-image: url(../images/4.png);
     top: -51px;
 
     @include breakpoint(tablet) {
@@ -92,7 +92,7 @@
     margin-left: -19px;
     width: 183px;
     aspect-ratio: 329 / 255;
-    background-image: url(../../../images/go.png);
+    background-image: url(../images/go.png);
     top: -69px;
 
     @include breakpoint(tablet) {
@@ -113,7 +113,7 @@
   @extend .c-img;
   width: 35px;
   aspect-ratio: 50 / 60;
-  background-image: url(../../../images/nav_alien.svg);
+  background-image: url(../images/nav_alien.svg);
   display: block;
   position: relative;
   transform: translateY(100%);
@@ -130,7 +130,7 @@
   min-width: 146px;
   width: 81.6%;
   aspect-ratio: 146 / 148.2;
-  background-image: url(../../../images/fv_rocketBoy.svg);
+  background-image: url(../images/fv_rocketBoy.svg);
   position: absolute;
   top: 20.4%;
   right: 22.7%;
@@ -143,7 +143,7 @@
   @extend .c-img;
   width: 100%;
   height: 100%;
-  background-image: url(../../../images/fv_space.svg);
+  background-image: url(../images/fv_space.svg);
   position: relative;
   z-index: 1;
   scale: 0;
@@ -155,7 +155,7 @@
   width: 30.7%;
   max-width: 110px;
   aspect-ratio: 54.99 / 35.14;
-  background-image: url(../../../images/fv_planet-white.svg);
+  background-image: url(../images/fv_planet-white.svg);
   position: absolute;
   top: 14.7%;
   right: 4.8%;
@@ -171,7 +171,7 @@
     @extend .c-img;
     width: 76px;
     aspect-ratio: 1 / 1;
-    background-image: url(../../../images/about_planet-green.svg);
+    background-image: url(../images/about_planet-green.svg);
     position: absolute;
     top: 0;
     left: 80.6%;
@@ -198,7 +198,7 @@
   margin-top: 5px;
   width: 60.25px;
   aspect-ratio: 60.25 / 39;
-  background-image: url(../../../images/secTitle_star.svg);
+  background-image: url(../images/secTitle_star.svg);
   opacity: 0;
   transform: scale(1, .8);
 
@@ -220,7 +220,7 @@
   @extend .c-img;
   width: 114px;
   aspect-ratio: 145 / 114.2;
-  background-image: url(../../../images/about_rocket.svg);
+  background-image: url(../images/about_rocket.svg);
   position: absolute;
   top: 274px;
   right: clamp(205px, 48.2vw, 289px);
@@ -244,7 +244,7 @@
   margin-inline: auto;
   width: 86.5%;
   aspect-ratio: 300 / 217;
-  background-image: url(../../../images/skills_ufo.svg);
+  background-image: url(../images/skills_ufo.svg);
   position: relative;
 }
 
@@ -252,7 +252,7 @@
   @extend .c-img;
   width: 100%;
   aspect-ratio: 200 / 164;
-  background-image: url(../../../images/works_light.png);
+  background-image: url(../images/works_light.png);
   position: absolute;
   left: 0;
   bottom: 0;
@@ -264,7 +264,7 @@
   @extend .c-img;
   width: 216px;
   aspect-ratio: 426 / 372;
-  background-image: url(../../../images/contactSec_alien.svg);
+  background-image: url(../images/contactSec_alien.svg);
   position: absolute;
   bottom: -93px;
   left: -52px;
@@ -288,7 +288,7 @@
     content: "";
     width: 20%;
     aspect-ratio: 213 / 201;
-    background-image: url(../../../images/contactSec_alienEyelid.svg);
+    background-image: url(../images/contactSec_alienEyelid.svg);
     position: absolute;
     top: 4.3%;
     left: 25%;
@@ -302,7 +302,7 @@
   @extend .c-img;
   width: 100%;
   height: 100%;
-  background-image: url(../../../images/archive_checkMan.svg);
+  background-image: url(../images/archive_checkMan.svg);
   display: block;
   position: relative;
 
@@ -310,7 +310,7 @@
     @extend .c-img;
     width: 49.3%;
     aspect-ratio: 124 / 182;
-    background-image: url(../../../images/archive_checkMan-arm.svg);
+    background-image: url(../images/archive_checkMan-arm.svg);
     position: absolute;
     top: 9.7%;
     left: 45.8%;
@@ -322,7 +322,7 @@
 .c-alien03 {
   @extend .c-img;
   aspect-ratio: 400 / 376;
-  background-image: url(../../../images/contact_alien.png);
+  background-image: url(../images/contact_alien.png);
   position: absolute;
   animation: floating 0.8s ease-in-out infinite alternate-reverse;
 
