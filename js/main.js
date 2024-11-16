@@ -1,62 +1,62 @@
 'use strict';
 
-$(function() {
+jQuery(function() {
   /* ---------- ハンバーガーメニュー ---------- */
-  $(".js-hamburgerBtn").on('click', function() {
-    $(this).toggleClass('is-open');
-    $(".js-nav").toggleClass('is-open');
-    $("body").toggleClass('is-open');
-    $(".js-cover").toggleClass('is-open');
+  jQuery(".js-hamburgerBtn").on('click', function() {
+    jQuery(this).toggleClass('is-open');
+    jQuery(".js-nav").toggleClass('is-open');
+    jQuery("body").toggleClass('is-open');
+    jQuery(".js-cover").toggleClass('is-open');
 
-    if ($(this).text() === 'メニューを開く') {
-      $(".js-menu").text('メニューを閉じる');
-      $(".js-hamburgerBtn").attr('aria-expanded', 'true');
+    if (jQuery(this).text() === 'メニューを開く') {
+      jQuery(".js-menu").text('メニューを閉じる');
+      jQuery(".js-hamburgerBtn").attr('aria-expanded', 'true');
     } else {
-      $(".js-menu").text('メニューを開く');
-      $(".js-hamburgerBtn").attr('aria-expanded', 'false');
+      jQuery(".js-menu").text('メニューを開く');
+      jQuery(".js-hamburgerBtn").attr('aria-expanded', 'false');
     }
   });
 
   // 最後の項目の後ハンバーガーボタンに戻る
-  $(".js-focusTrap").on('focus', function() {
-    if ( $(".js-hamburgerBtn").hasClass('is-open') ) {
-    $(".js-hamburgerBtn").focus();
+  jQuery(".js-focusTrap").on('focus', function() {
+    if ( jQuery(".js-hamburgerBtn").hasClass('is-open') ) {
+    jQuery(".js-hamburgerBtn").focus();
     }
   });
 
   const close = () => {
-    $(".js-hamburgerBtn").removeClass('is-open').attr('aria-expanded', 'false');
-    $(".js-nav").removeClass('is-open');
-    $("body").removeClass('is-open');
-    $(".c-cover").removeClass('is-open');
-    $(".js-menu").text('メニューを開く');
+    jQuery(".js-hamburgerBtn").removeClass('is-open').attr('aria-expanded', 'false');
+    jQuery(".js-nav").removeClass('is-open');
+    jQuery("body").removeClass('is-open');
+    jQuery(".c-cover").removeClass('is-open');
+    jQuery(".js-menu").text('メニューを開く');
   };
   
   // Escキーでメニュー閉じる
-  $(document).keydown( function(e) {
-    if ( e.which === 27 && $(".js-hamburgerBtn").hasClass('is-open') ) {
+  jQuery(document).keydown( function(e) {
+    if ( e.which === 27 && jQuery(".js-hamburgerBtn").hasClass('is-open') ) {
       e.preventDefault();
       close();
     }
   });
 
   // メニューの外をクリックした時にも閉じる
-  $(".js-cover").on('click', function() {
-    if ( $(".js-hamburgerBtn").hasClass('is-open') ) {
+  jQuery(".js-cover").on('click', function() {
+    if ( jQuery(".js-hamburgerBtn").hasClass('is-open') ) {
       close();
     }
   });
   
   // リサイズでメニュー閉じる
-  $(window).on('resize', function() {
-    if ( $(".js-hamburgerBtn").hasClass('is-open') ) {
+  jQuery(window).on('resize', function() {
+    if ( jQuery(".js-hamburgerBtn").hasClass('is-open') ) {
       close();
     }
   });
   
   // ページ内リンクでメニューを閉じる
-  $(".js-nav a").on('click', function() {
-    if ( $(".js-hamburgerBtn").hasClass('is-open') ) {
+  jQuery(".js-nav a").on('click', function() {
+    if ( jQuery(".js-hamburgerBtn").hasClass('is-open') ) {
       close();
     }
   });
