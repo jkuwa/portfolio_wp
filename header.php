@@ -70,5 +70,6 @@
       <div class="p-focusTrap js-focusTrap" tabindex="0"></div>
     </nav>
 
-    <a href="#contact" class="c-button--circle p-contactBtn"><div class="p-contactBtn__alien"><span class="c-alien--header"></span></div>contact</a>
+    <?php $contact = get_page_by_path('contact'); ?>
+    <a href="<?php echo esc_url(get_permalink($contact -> ID)); ?>" class="c-button--circle p-contactBtn"><div class="p-contactBtn__alien"><span class="c-alien--header"></span></div>contact</a>
   </header>
