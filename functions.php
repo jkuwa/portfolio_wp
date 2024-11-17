@@ -3,11 +3,19 @@
   add_theme_support('title-tag');
   
   // タイトル区切り文字変更
-  function my_portfolio_title_separator($separator) {
-    $separator = '';
-    return $separator;
+  function my_portfolio_title($title) {
+    $post_title = single_post_title('', false);
+    $site_title = get_bloginfo('name', 'display');
+    $description = get_bloginfo('description', 'display');
+
+    if ( is_front_page() && is_home() ) {
+      $title = "$site_title $description";
+    } elseif ( is_singular() ) {
+      $title = "$post_title | $site_title $description";
+    }
+    return $title;
   }
-  add_filter('document_title_separator', 'my_portfolio_title_separator');
+  add_filter('pre_get_document_title', 'my_portfolio_title');
   
 
   // ファイル読み込み
