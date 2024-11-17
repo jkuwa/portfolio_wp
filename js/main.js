@@ -66,7 +66,7 @@ jQuery(function() {
 {
   /* ---------- ホバーアニメーション ---------- */
   // ナビリンク
-  const links = document.querySelectorAll(".js-link");
+  const links = document.querySelectorAll(".p-nav__list li a");
 
   // テキストを生成
   links.forEach((link) => {

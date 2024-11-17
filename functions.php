@@ -10,6 +10,29 @@
   add_filter('document_title_separator', 'my_portfolio_title_separator');
   
 
+  // メニュー登録
+  function my_portfolio_menu() {
+    register_nav_menus( array(
+      'main_menu' => 'Main Menu',
+      'footer_menu' => 'Footer Menu',
+    ));
+  }
+  add_action('after_setup_theme', 'my_portfolio_menu');
+  
+  // メニュー項目に aria-label を追加
+  class Custom_Globalnav_Walker extends Walker_Nav_Menu {
+
+    function start_el(&$output, $data_object, $depth = 0, $args = null, $current_object_id = 0) {
+      $class = !empty($data_object -> classes) ? implode(' ', array_filter($data_object -> classes)) : '';
+      $aria_label = !empty($data_object -> title) ? esc_attr($data_object -> title) : '';
+
+      $output .= '<li class="' . esc_attr($class) . '">';
+      $output .= '<a href="' . esc_url($data_object -> url) . '"aria-label"' . $aria_label. '">';
+      $output .= esc_html($data_object -> title);
+      $output .= '</a>';
+    }  
+  }
+
   // ファイル読み込み
   function my_portfolio_script() {
     // css

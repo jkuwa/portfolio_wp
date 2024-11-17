@@ -15,13 +15,13 @@
     <button class="c-button--circle p-hamburgerBtn js-hamburgerBtn" type="button" aria-expanded="false" aria-controls="nav"><span class="p-hamburgerBtn__bar js-menu">メニューを開く</span></button>
 
     <nav id="nav" class="l-nav p-nav js-nav" tabindex="0">
-      <ul class="c-outline--navList p-nav__list">
-        <li><a href="index.html" class="js-link" aria-label="home">home</a></li>
-        <li><a href="#about" class="js-link" aria-label="about">about</a></li>
-        <li><a href="#skills" class="js-link" aria-label="skills">skills</a></li>
-        <li><a href="#works" class="js-link" aria-label="works">works</a></li>
-        <li class="p-nav__contact"><a href="#contact" class="js-link"  aria-label="contact">contact</a></li>
-      </ul>
+
+      <!-- MAIN MENU -->
+      <?php wp_nav_menu( array(
+        'theme_location' => 'main_menu',
+        'menu_class' => 'p-nav__list',
+        'walker' => new Custom_Globalnav_Walker(),
+      )); ?>
 
       <ul class="c-outline--navSns p-nav__sns">
         <li><a href="#"><span class="c-icon__x -nav">X</span></a></li>
