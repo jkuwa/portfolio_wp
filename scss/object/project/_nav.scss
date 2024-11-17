@@ -77,19 +77,30 @@
     @include breakpoint(tablet) {
       margin-top: 0;
       align-items: center;
-      gap: 20px;
 
       a {
         padding: 5px;
       }
 
-      a:hover span {
+      a:hover i {
         transform: translateY(-4px);
       }
     }
 
-    @include breakpoint(pc) {
-      gap: 30px;
+    li > a {
+      i {
+        font-size: 3rem;
+        color: $white-color;
+  
+        @include breakpoint(tablet) {
+          font-size: 2rem;
+          color: $font-color;
+        }
+      }
+
+      span {
+        font-size: 0;
+      }
     }
   }
 

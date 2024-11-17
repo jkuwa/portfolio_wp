@@ -174,16 +174,6 @@ textarea:focus-visible {
   -webkit-mask-image: url(../images/icons/x_logo.svg);
           mask-image: url(../images/icons/x_logo.svg);
 }
-.c-icon__x.-nav {
-  width: 2.8rem;
-  background-color: #fff;
-}
-@media (min-width: 768px) {
-  .c-icon__x.-nav {
-    width: 2rem;
-    background-color: #333;
-  }
-}
 .c-icon__x.-about {
   width: 29px;
   background-color: #333;
@@ -212,16 +202,6 @@ textarea:focus-visible {
   aspect-ratio: 496/512;
   -webkit-mask-image: url(../images/icons/github_logo.svg);
           mask-image: url(../images/icons/github_logo.svg);
-}
-.c-icon__github.-nav {
-  width: 3rem;
-  background-color: #fff;
-}
-@media (min-width: 768px) {
-  .c-icon__github.-nav {
-    width: 2.2rem;
-    background-color: #333;
-  }
 }
 .c-icon__github.-skill {
   width: 77.5px;
@@ -1250,19 +1230,26 @@ textarea:focus-visible {
   .p-nav__sns {
     margin-top: 0;
     align-items: center;
-    gap: 20px;
   }
   .p-nav__sns a {
     padding: 5px;
   }
-  .p-nav__sns a:hover span {
+  .p-nav__sns a:hover i {
     transform: translateY(-4px);
   }
 }
-@media (min-width: 1024px) {
-  .p-nav__sns {
-    gap: 30px;
+.p-nav__sns li > a i {
+  font-size: 3rem;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .p-nav__sns li > a i {
+    font-size: 2rem;
+    color: #333;
   }
+}
+.p-nav__sns li > a span {
+  font-size: 0;
 }
 .p-nav.is-open {
   visibility: visible;
