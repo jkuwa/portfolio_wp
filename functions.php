@@ -1,8 +1,9 @@
 <?php
   // テーマサポート
   add_theme_support('title-tag');
+  add_theme_support('post-thumbnails');
   
-  // タイトル区切り文字変更
+  // タイトル変更
   function my_portfolio_title($title) {
     $post_title = single_post_title('', false);
     $site_title = get_bloginfo('name', 'display');
@@ -62,8 +63,10 @@
   }
 
 
-  // SNS設定追加
-  function my_portfolio_sns_customize($wp_customize) {
+  // テーマカスタマイザー追加
+  function my_portfolio_customize_register($wp_customize) {
+
+    // SNS設定
     $wp_customize -> add_section('social_media_settings', array(
       'title' => 'SNSアカウント設定',
       'priority' => 160,
@@ -89,5 +92,24 @@
         'type' => 'url',
       ));
     }
+
+    // フロントページ設定
+    $wp_customize -> add_section('front_page_settings', array(
+      'title' => 'フロントページ設定',
+      'priority' => 180,
+    ));
+
+    // about
+    $wp_customize -> add_setting('about_sec', array(
+      'default' => '',
+      'sanitize_callback' => 'absint',
+    ));
+
+    $wp_customize -> add_control('about_sec', array(
+      'label' => 'about',
+      'section' => 'front_page_settings',
+      'description' => '「about」に表示する固定ページを選択してください。',
+      'type' => 'dropdown-pages',
+    ));
   }
-  add_action('customize_register', 'my_portfolio_sns_customize');
+  add_action('customize_register', 'my_portfolio_customize_register');

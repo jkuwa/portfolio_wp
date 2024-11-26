@@ -18,38 +18,61 @@
       </div>
     </div>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="c-section p-about">
-      <div class="p-secTitle js-target">
-        <div class="c-number -sec02"></div>
-        <div class="p-secTitle__star">
-          <span class="c-star -left"></span>
-          <h2><span>about</span>私について</h2>
-          <span class="c-star -right"></span>
+    <?php
+      // カスタマイザーで選択された時に表示
+      $about_id = get_theme_mod('about_sec');
+      $about = get_post($about_id);
+      
+      if ($about_id):
+    ?>
+      <!-- ABOUT SECTION -->
+      <section id="about" class="c-section p-about">
+        <div class="p-secTitle js-target">
+          <div class="c-number -sec02"></div>
+          <div class="p-secTitle__star">
+            <span class="c-star -left"></span>
+            <h2><span>about</span>私について</h2>
+            <span class="c-star -right"></span>
+          </div>
         </div>
-      </div>
 
-      <div class="c-wrapper p-about__body">
-        <div class="p-about__img">
-          <svg viewBox="0 0 382 525" xmlns="http://www.w3.org/2000/svg" class="c-shadow--pink">
-            <defs>
-              <clipPath id="about_mask">
-                <path d="M20.5559 127.5C20.5559 60.4943 91.6814 1 185.181 1C269.557 1 346.799 44.5 355.681 113.5C364.564 182.5 327.5 185 334 227.5C337.553 250.73 398.676 300.5 375.681 402C360.438 469.283 274.498 521.502 197.557 524.5C120.557 527.5 12.4368 471.718 3.55635 386C-7.9434 275 48.0567 260.006 48.0567 227.5C48.0567 194.994 20.5559 194.506 20.5559 127.5Z" />
-              </clipPath>
-            </defs>
-            <image href="images/about.jpg" width="100%" height="100%" clip-path="url(#about_mask)"></image>
-          </svg>
-          <div class="c-outline--single p-about__sns"><a href="#" class="c-icon__x -about">X</a></div>
-          <div class="c-rocket"></div>
+        <div class="c-wrapper p-about__body">
+          <div class="p-about__img">
+
+            <svg viewBox="0 0 382 525" xmlns="http://www.w3.org/2000/svg" class="c-shadow--pink">
+              <defs>
+                <clipPath id="about_mask">
+                  <path d="M20.5559 127.5C20.5559 60.4943 91.6814 1 185.181 1C269.557 1 346.799 44.5 355.681 113.5C364.564 182.5 327.5 185 334 227.5C337.553 250.73 398.676 300.5 375.681 402C360.438 469.283 274.498 521.502 197.557 524.5C120.557 527.5 12.4368 471.718 3.55635 386C-7.9434 275 48.0567 260.006 48.0567 227.5C48.0567 194.994 20.5559 194.506 20.5559 127.5Z" />
+                </clipPath>
+
+                
+              </defs>
+
+              <?php $avatar_url = get_the_post_thumbnail_url($about_id, 'full') ?:  get_theme_file_uri('/images/about_noimage.png'); ?>
+
+              <image href="<?php echo esc_url($avatar_url); ?>" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" clip-path="url(#about_mask)"></image>
+
+              
+            </svg>
+
+            <div class="c-outline--single p-about__sns"><a href="#" class="c-icon__x -about">X</a></div>
+            <div class="c-rocket"></div>
+          </div>
+
+          <div class="p-about__text">
+            <?php 
+              if( !empty($about -> post_content) ) {
+                echo wp_kses_post($about -> post_content);
+              } else {
+                echo '<p>自己紹介が入ります。</p>';
+              }
+            ?>
+            <div class="c-planet--green"></div>
+          </div>
+
         </div>
-        <div class="p-about__text">
-          <p><span>こんにちは。</span><br>フリーランスのコーダーとして活動している千葉県在住のくわです。</p>
-          <p>約７年薬剤師としてドラッグストアに勤務していましたが、没頭できるくらい楽しく仕事がしたい！と思い転職を決意。<br>デザインをそのままにはもちろんのこと、伝えたい思いが全ての方に正しく伝わるように心がけています。</p>
-          <p>日々の学習や活動の記録を <a href="#">BuildUp</a> で管理しています。</p>
-          <div class="c-planet--green"></div>
-        </div>
-      </div>
-    </section>
+      </section>
+    <?php endif; ?>
 
     <!-- SKILLS SECTION -->
     <section id="skills" class="c-section p-skills js-skills">
