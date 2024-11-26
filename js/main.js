@@ -172,40 +172,6 @@ jQuery(function() {
   });
 
 
-  /* ---------- ファーストビューアニメーション ---------- */
-  const tl = gsap.timeline();
-  tl.to(".js-boy", {
-    x: 0,
-    duration: 2,
-    ease: 'steps(4)',
-  })
-    .to(".js-title", {
-    scale: 1,
-    duration: 1.5,
-    ease: 'elastic.out',
-    })
-    .to(".js-space", {
-      scale: 1,
-      duration: 1.5,
-      ease: 'elastic.out',
-    }, '<')
-    .to(".js-planet", {
-      scale: 1,
-      duration: 1.5,
-      ease: 'elastic.out',
-    }, '<0.1')
-    .to(".js-number", {
-      opacity: 1,
-      duration: 0.3,
-      ease: 'none',
-    }, '<0.2')
-    .to(".js-number", {
-      yPercent: 20,
-      duration: 0.6,
-      ease: 'bounce.out',
-    }, '<');
-      
-
   /* ---------- セクションタイトル アニメーション ---------- */
   const targets = document.querySelectorAll(".js-target");
 
@@ -221,6 +187,42 @@ jQuery(function() {
       once: true,
     });
   });
+
+
+  /* ---------- ファーストビューアニメーション ---------- */
+  const initScrollTriggerFirstView = () => {
+    const tl = gsap.timeline();
+    tl.to(".js-boy", {
+      x: 0,
+      duration: 2,
+      ease: 'steps(4)',
+    })
+      .to(".js-title", {
+      scale: 1,
+      duration: 1.5,
+      ease: 'elastic.out',
+      })
+      .to(".js-space", {
+        scale: 1,
+        duration: 1.5,
+        ease: 'elastic.out',
+      }, '<')
+      .to(".js-planet", {
+        scale: 1,
+        duration: 1.5,
+        ease: 'elastic.out',
+      }, '<0.1')
+      .to(".js-number", {
+        opacity: 1,
+        duration: 0.3,
+        ease: 'none',
+      }, '<0.2')
+      .to(".js-number", {
+        yPercent: 20,
+        duration: 0.6,
+        ease: 'bounce.out',
+      }, '<');
+  }
 
 
   /* ---------- UFOスクロールアニメーション ---------- */
@@ -285,10 +287,6 @@ jQuery(function() {
     });
   }
 
-  initScrollTriggerSkills();
-  initScrollTriggerWorks();
-  initScrollTriggerContact();
-
 
   /* ---------- skills section グリッドレイアウト ---------- */
   const magicGrid = new MagicGrid({
@@ -297,5 +295,18 @@ jQuery(function() {
     gutter: 35,
   });
 
-  magicGrid.listen();
+
+  /* ---------- フロントページのみ実施 ---------- */
+  if (this.location.pathname === '/') {
+    // ファーストビューアニメーション
+    initScrollTriggerFirstView();
+
+    // UFOアニメーション
+    initScrollTriggerSkills();
+    initScrollTriggerWorks();
+    initScrollTriggerContact();
+
+    // skillsセクション
+    magicGrid.listen();
+  }
 }
