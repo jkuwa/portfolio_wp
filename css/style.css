@@ -188,15 +188,6 @@ textarea:focus-visible {
     width: 38px;
   }
 }
-.c-icon__x.-footer {
-  width: 20px;
-  background-color: #333;
-}
-@media (min-width: 768px) {
-  .c-icon__x.-footer {
-    width: 30px;
-  }
-}
 
 .c-icon__github {
   aspect-ratio: 496/512;
@@ -210,15 +201,6 @@ textarea:focus-visible {
 @media (min-width: 1024px) {
   .c-icon__github.-skill {
     width: 92px;
-  }
-}
-.c-icon__github.-footer {
-  width: 24px;
-  background-color: #333;
-}
-@media (min-width: 768px) {
-  .c-icon__github.-footer {
-    width: 35px;
   }
 }
 
@@ -1446,21 +1428,32 @@ body.is-open {
   background-color: #5DBCFF;
   text-align: center;
 }
-.p-footer ul {
+.p-footer__sns {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
 @media (min-width: 768px) {
-  .p-footer ul {
+  .p-footer__sns {
     gap: 36px;
   }
 }
 @media (min-width: 1024px) {
-  .p-footer ul {
+  .p-footer__sns {
     gap: 48px;
   }
+}
+.p-footer__sns li > a {
+  font-size: 2.4rem;
+}
+@media (min-width: 768px) {
+  .p-footer__sns li > a {
+    font-size: 3.5rem;
+  }
+}
+.p-footer__sns li > a span {
+  font-size: 0;
 }
 .p-footer small {
   margin-top: 18px;
