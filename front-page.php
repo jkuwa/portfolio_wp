@@ -44,18 +44,57 @@
                 <clipPath id="about_mask">
                   <path d="M20.5559 127.5C20.5559 60.4943 91.6814 1 185.181 1C269.557 1 346.799 44.5 355.681 113.5C364.564 182.5 327.5 185 334 227.5C337.553 250.73 398.676 300.5 375.681 402C360.438 469.283 274.498 521.502 197.557 524.5C120.557 527.5 12.4368 471.718 3.55635 386C-7.9434 275 48.0567 260.006 48.0567 227.5C48.0567 194.994 20.5559 194.506 20.5559 127.5Z" />
                 </clipPath>
-
-                
               </defs>
 
               <?php $avatar_url = get_the_post_thumbnail_url($about_id, 'full') ?:  get_theme_file_uri('/images/about_noimage.png'); ?>
 
               <image href="<?php echo esc_url($avatar_url); ?>" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" clip-path="url(#about_mask)"></image>
 
-              
             </svg>
 
-            <div class="c-outline--single p-about__sns"><a href="#" class="c-icon__x -about">X</a></div>
+
+            <?php 
+              $x_url = get_theme_mod('my_portfolio_x_url');
+              $facebook_url = get_theme_mod('my_portfolio_facebook_url');
+              $instagram_url = get_theme_mod('my_portfolio_instagram_url');
+              $github_url = get_theme_mod('my_portfolio_github_url');
+            ?>
+
+            <ul class="c-outline--list p-about__sns">
+              <?php if ($x_url): ?>
+                <li>
+                  <a href="<?php echo esc_url($x_url); ?>" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span>X</span>
+                  </a>
+                </li>
+              <?php endif; ?>
+
+              <?php if ($facebook_url): ?>
+                <li>
+                  <a href="<?php echo esc_url($facebook_url); ?>" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-facebook" aria-hidden="true"></i><span>Facebook</span>
+                  </a>
+                </li>
+              <?php endif; ?>
+
+              <?php if ($instagram_url): ?>
+                <li>
+                  <a href="<?php echo esc_url($instagram_url); ?>" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i><span>Instagram</span>
+                  </a>
+                </li>
+              <?php endif; ?>
+
+              <?php if ($github_url): ?>
+                <li>
+                  <a href="<?php echo esc_url($github_url); ?>" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span>
+                  </a>
+                </li>
+              <?php endif; ?>
+
+            </ul>
+
             <div class="c-rocket"></div>
           </div>
 

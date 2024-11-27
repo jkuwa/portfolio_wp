@@ -152,7 +152,7 @@ textarea:focus-visible {
 }
 
 /* ----- icon ----- */
-.c-mask, .c-icon__github, .c-icon__x {
+.c-mask, .c-icon__github {
   display: block;
   font-size: 0;
   -webkit-mask-size: contain;
@@ -167,26 +167,6 @@ textarea:focus-visible {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.c-icon__x {
-  aspect-ratio: 1200/1227;
-  -webkit-mask-image: url(../images/icons/x_logo.svg);
-          mask-image: url(../images/icons/x_logo.svg);
-}
-.c-icon__x.-about {
-  width: 29px;
-  background-color: #333;
-}
-@media (min-width: 768px) {
-  .c-icon__x.-about {
-    width: 32px;
-  }
-}
-@media (min-width: 1024px) {
-  .c-icon__x.-about {
-    width: 38px;
-  }
 }
 
 .c-icon__github {
@@ -1668,22 +1648,57 @@ body.is-open {
   }
 }
 .p-about__sns {
+  display: flex;
+  gap: 12px;
   position: absolute;
-  top: 296px;
-  right: 23px;
+  top: 320px;
+  left: 140px;
   transform: rotate(-27deg);
+  transform-origin: left top;
 }
 @media (min-width: 768px) {
   .p-about__sns {
-    top: 324.6px;
-    right: 25.8px;
+    top: 348px;
+    left: 155px;
   }
 }
 @media (min-width: 1024px) {
   .p-about__sns {
-    top: 460px;
-    right: 32px;
+    top: 480px;
+    left: 228px;
   }
+}
+.p-about__sns li > a {
+  display: block;
+  opacity: 0.8;
+}
+.p-about__sns li > a:hover {
+  transform: scale(1.2);
+}
+.p-about__sns li > a i {
+  font-size: 2.7rem;
+}
+@media (min-width: 768px) {
+  .p-about__sns li > a i {
+    font-size: 2.9rem;
+  }
+}
+@media (min-width: 1024px) {
+  .p-about__sns li > a i {
+    font-size: 3.5rem;
+  }
+}
+.p-about__sns li > a span {
+  font-size: 0;
+}
+.p-about__sns li:nth-child(2) {
+  transform: translate(0, 3%) rotate(-6deg);
+}
+.p-about__sns li:nth-child(3) {
+  transform: translate(0, -26%) rotate(-18deg);
+}
+.p-about__sns li:nth-child(4) {
+  transform: translate(-18%, -96%) rotate(-24deg);
 }
 @media (min-width: 768px) {
   .p-about__text {

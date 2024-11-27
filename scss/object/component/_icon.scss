@@ -15,24 +15,6 @@
   background-repeat: no-repeat;
 }
 
-.c-icon__x {
-  @extend .c-mask;
-  aspect-ratio: 1200 / 1227;
-  mask-image: url(../images/icons/x_logo.svg);
-
-  &.-about {
-    width: 29px;
-    background-color: $font-color;
-
-    @include breakpoint(tablet) {
-      width: 32px;
-    }
-    @include breakpoint(pc) {
-      width: 38px;
-    }
-  }
-}
-
 .c-icon__github {
   @extend .c-mask;
   aspect-ratio: 496 / 512;
