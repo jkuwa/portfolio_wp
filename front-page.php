@@ -113,6 +113,12 @@
       </section>
     <?php endif; ?>
 
+
+    <?php
+      $skills = get_page_by_path('skills');
+      if ($skills):
+    ?>
+
     <!-- SKILLS SECTION -->
     <section id="skills" class="c-section p-skills js-skills">
       <div class="p-secTitle js-target">
@@ -125,62 +131,41 @@
       </div>
 
       <ul class="c-wrapper p-skills__list js-grid">
-        <li class="p-skill">
+
+        <?php
+          for ($i = 1; $i <= 6; $i++):
+            $skill_field = get_field("skill0{$i}", $skills -> ID);
+
+            if ( empty($skill_field)) {
+              break;
+            }
+        ?>
+
+        <li class="p-skill  -field0<?php echo $i; ?>">
+
           <div class="p-skill__icon">
-            <div class="c-icon__html"><!-- "html5" --></div>
+            <?php if ( $icon1 = get_field("skill_icon0{$i}-1", $skills -> ID) ): ?>
+              <img src="<?php echo esc_url($icon1); ?>" aria-hidden="true" class="c-icon--01">
+            <?php endif; ?>
+            
+            <?php if ( $icon2 = get_field("skill_icon0{$i}-2", $skills -> ID) ): ?>
+              <img src="<?php echo esc_url($icon2); ?>" aria-hidden="true" class="c-icon--02">
+            <?php endif; ?>
           </div>
+
           <section class="p-skill__desc">
-            <h3>HTML</h3>
-            <p>正しいHTMLマークアップと WAI-ARIA を活用し、アクセシブルなサイトの構築に努めています。</p>
+            <h3><?php echo esc_html($skill_field); ?></h3>
+            <p><?php the_field("skill_desc0{$i}", $skills -> ID); ?></p>
           </section>
         </li>
 
-        <li class="p-skill">
-          <div class="p-skill__icon">
-            <div class="c-icon__css"><!-- "css3-alt" --></div> 
-            <div class="c-icon__sass"><!-- "sass-brands-solid" --></div>
-          </div>
-          <section class="p-skill__desc">
-            <h3>CSS / Sass</h3>
-            <p>CSS設計にはFLOCSSを取り入れ、保守性が高く、理解しやすいコードを心がけています。またアニメーションやレスポンシブデザインの実装についてはサイトのイメージやバランスを崩さないようこだわりを持って作っています。</p>
-          </section>
-        </li>
+        <?php endfor; ?>
 
-        <li class="p-skill">
-          <div class="p-skill__icon">
-            <div class="c-icon__js"><!-- "js" --></div>
-            <div class="c-icon__jquery"></div>
-          </div>
-          <section class="p-skill__desc">
-            <h3>JavaScript / jQuery</h3>
-            <p>ハンバーガーメニューやパララックス効果、アコーディオンUIなどの実装経験があります。さらに、アクセシビリティの向上を図るため、キーボード操作対応の実装も可能です。</p>
-          </section>
-        </li>
-
-        <li class="p-skill">
-          <div class="p-skill__icon">
-            <div class="c-icon__wp"><!-- "wordpress-brands-solid" --></div>
-          </div>
-          <section class="p-skill__desc">
-            <h3>WordPress</h3>
-            <p>オリジナルテーマの作成により、自由度の高いサイト制作を実現しています。クライアント様のニーズに応じて、どの程度カスタマイズが必要かを十分にヒアリングし、その要件に合わせたWordPressテーマの開発を心がけています。</p>
-          </section>
-        </li>
-
-        <li class="p-skill">
-          <div class="p-skill__icon">
-            <div class="c-icon__git"><!-- "git-alt--brands-solid" --></div>
-            <div class="c-icon__github -skill"><!-- "github-brands-solid" --></div>
-          </div>
-          <section class="p-skill__desc">
-            <h3>Git / GitHub</h3>
-            <p>GitHubを利用してソースコードのバージョン管理を行っており、チームでの開発経験もあります。</p>
-          </section>
-        </li>
       </ul>
 
       <!--"html5""css3-alt""sass-brands-solid""js""wordpress-brands-solid""git-alt--brands-solid""github-brands-solid"!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. Licensed under CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/-->
     </section>
+    <?php endif; ?>
 
     <!-- WORKS SECTION -->
     <section id="works" class="c-section p-works js-works">

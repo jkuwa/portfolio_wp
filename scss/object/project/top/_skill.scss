@@ -19,7 +19,16 @@
   &__icon {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: max(25px, 10%);
+
+    img {
+      width: 80px;
+      
+      @include breakpoint(pc) {
+        width: 95px;
+      }
+    }
   }
 
   &__desc {
