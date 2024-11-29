@@ -25,6 +25,7 @@
       
       if ($about_id):
     ?>
+
       <!-- ABOUT SECTION -->
       <section id="about" class="c-section p-about">
         <div class="p-secTitle js-target">
@@ -115,8 +116,14 @@
 
 
     <?php
-      $skills = get_page_by_path('skills');
-      if ($skills):
+      $args = array(
+        'post_type' => 'skills',
+        'posts_per_page' => -1,
+        'order' => 'ASC',
+      );
+      $skills_query = new WP_Query( $args );
+
+      if ($skills_query -> have_posts()):
     ?>
 
     <!-- SKILLS SECTION -->
@@ -133,38 +140,35 @@
       <ul class="c-wrapper p-skills__list js-grid">
 
         <?php
-          for ($i = 1; $i <= 6; $i++):
-            $skill_field = get_field("skill0{$i}", $skills -> ID);
-
-            if ( empty($skill_field)) {
-              break;
-            }
+          while ($skills_query -> have_posts()):
+            $skills_query -> the_post();
         ?>
 
-        <li class="p-skill  -field0<?php echo $i; ?>">
+        <li <?php post_class('p-skill'); ?>>
 
           <div class="p-skill__icon">
-            <?php if ( $icon1 = get_field("skill_icon0{$i}-1", $skills -> ID) ): ?>
+            <?php if ( $icon1 = get_field("skill_icon01") ): ?>
               <img src="<?php echo esc_url($icon1); ?>" aria-hidden="true" class="c-icon--01">
             <?php endif; ?>
             
-            <?php if ( $icon2 = get_field("skill_icon0{$i}-2", $skills -> ID) ): ?>
+            <?php if ( $icon2 = get_field("skill_icon02") ): ?>
               <img src="<?php echo esc_url($icon2); ?>" aria-hidden="true" class="c-icon--02">
             <?php endif; ?>
           </div>
 
           <section class="p-skill__desc">
-            <h3><?php echo esc_html($skill_field); ?></h3>
-            <p><?php the_field("skill_desc0{$i}", $skills -> ID); ?></p>
+            <h3><?php the_title(); ?></h3>
+            <p><?php the_content(); ?></p>
           </section>
         </li>
 
-        <?php endfor; ?>
+        <?php endwhile; ?>
 
       </ul>
 
       <!--"html5""css3-alt""sass-brands-solid""js""wordpress-brands-solid""git-alt--brands-solid""github-brands-solid"!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. Licensed under CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/-->
     </section>
+
     <?php endif; ?>
 
     <!-- WORKS SECTION -->
