@@ -171,6 +171,17 @@
 
     <?php endif; ?>
 
+
+    <?php
+      $args = array(
+        'post_type' => 'achievement',
+        'posts_per_page' => 4,
+      );
+      $works_query = new WP_Query( $args );
+
+      if ($works_query -> have_posts()):
+    ?>
+
     <!-- WORKS SECTION -->
     <section id="works" class="c-section p-works js-works">
       <div class="p-secTitle js-target">
@@ -184,49 +195,20 @@
 
       <div class="c-wrapper--works">
         <ul class="c-outline--works p-works__list">
-          <li>
-            <a href="achievement.html">
-              <article class="p-workInfo">
-                <h3>2024.7<br>prompt website</h3>
-                <figure class="c-shadow">
-                  <img src="images/works_prompt.png" alt="茶色の背景の落ち着いた雰囲気のwebサイト">
-                </figure>
-              </article>
-            </a>
+
+        <?php
+          while ($works_query -> have_posts()):
+            $works_query -> the_post();
+        ?>
+          <li <?php post_class(); ?>>
+            <?php get_template_part('template/loop', 'work'); ?>
           </li>
-          <li>
-            <a href="#">
-              <article class="p-workInfo">
-                <h3>2024.7<br>prompt website</h3>
-                <figure class="c-shadow">
-                  <img src="images/works_prompt.png">
-                </figure>
-              </article>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <article class="p-workInfo">
-                <h3>2024.7<br>prompt website</h3>
-                <figure class="c-shadow">
-                  <img src="images/works_prompt.png">
-                </figure>
-              </article>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <article class="p-workInfo">
-                <h3>2024.7<br>prompt website</h3>
-                <figure class="c-shadow">
-                  <img src="images/works_prompt.png">
-                </figure>
-              </article>
-            </a>
-          </li>
+        <?php endwhile; ?>
+
         </ul>
       </div>
     </section>
+    <?php endif; ?>
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="c-section p-contactSec js-contact">
