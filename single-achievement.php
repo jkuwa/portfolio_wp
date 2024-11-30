@@ -3,94 +3,172 @@
   <main class="l-main">
     <div class="c-wrapper--achievement">
       
+    <?php if ( have_posts() ):
+      while ( have_posts() ):
+        the_post(); ?>
+
       <!-- ACHIEVEMENT DETAIL -->
-      <section class="p-achievement">
-        <h1>prompt website</h1>
+      <section <?php post_class('p-achievement'); ?>>
+        <h1><?php the_title(); ?></h1>
         <div class="p-achievement__head">
+
+        <?php if ( get_field('site_summary') ): ?>
           <dl>
-            <div>
-              <dt>launch date：</dt>
-              <dd>2024.07</dd>
+          <?php if ( get_field("release_date") ): ?>
+            <div>              
+              <dt>release date：</dt>
+              <dd><?php the_field('release_date'); ?></dd>              
             </div>
+          <?php endif; ?>
+
+          <?php if ( get_field('creation_date') ): ?>
+            <div>              
+              <dt>creation date：</dt>
+              <dd><?php the_field('creation_date'); ?></dd>              
+            </div>
+          <?php endif; ?>
+
+          <?php if ( get_field('site_url') ): ?>
             <div>
               <dt>URL：</dt>
-              <dd><a href="prompt-improve.com" aria-label="プロンプのwebサイト">prompt-improve.com</a></dd>
+              <dd><a href="<?php the_field('site_url'); ?>" aria-label="<?php the_title(); ?>"><?php the_field('site_url'); ?></a></dd>
             </div>
+          <?php endif; ?>
+
+          <?php if ( get_field('github_coding') || get_field('github_wp') ): ?>
+            <div>
+              <dt>GitHub：</dt>
+              <dd><a href="<?php the_field('github_coding'); ?>" aria-label="GitHubリポジトリ（コーディング）">coding</a></dd>
+              <dd><a href="<?php the_field('github_wp'); ?>" aria-label="GitHubリポジトリ（WordPress化）">WordPress</a></dd>
+            </div>
+          <?php endif; ?>
+
           </dl>
+        <?php endif; ?>
+
+        <?php if ( $siteImg = get_field('site_image') ): ?>
           <figure>
-            <img src="images/achievement_prompt.png" alt="プロンプのwebサイト">
+            <img src="<?php echo esc_url( $siteImg['url'] ); ?>" alt="<?php echo esc_attr( $siteImg['alt'] ); ?>">
           </figure>
+        <?php endif; ?>
         </div>
 
         <div class="p-achievement__body">
           <div class="p-achievement__body--data">
+          <?php if ( get_field('credits') ): ?>
             <section class="p-detail -credits">
               <h2>credits</h2>
               <dl>
+
+              <?php for ($i = 1; $i <= 5; $i++):
+                $name = get_field("creator_name0{$i}");
+                if ( empty($name) ) {
+                  break;
+                }
+              ?>
+
                 <div>
-                  <dt>direction/coding：</dt>
-                  <dd>町野 浩太</dd>
+                  <dt><?php the_field("creator_title0{$i}"); ?>：</dt>
+                  <dd><?php the_field("creator_name0{$i}"); ?></dd>
                 </div>
-                <div>
-                  <dt>webdesign：</dt>
-                  <dd>なえ</dd>
-                </div>
-                <div>
-                  <dt>coding/WordPress：</dt>
-                  <dd>くわ じゅんな</dd>
-                </div>
+
+              <?php endfor; ?>
               </dl>
             </section>
+          <?php endif; ?>
 
             <div>
+            <?php if ( get_field('production_time') ): ?>
               <section class="p-detail">
                 <h2>制作期間</h2>
                 <dl>
+
+                <?php for ($i = 1; $i <= 3; $i++):
+                  $production = get_field("production0{$i}");
+                  if ( empty($production) ) {
+                    break;
+                  }
+                ?>
+
                   <div>
-                    <dt>コーディング：</dt>
-                    <dd>1ヶ月半</dd>
+                    <dt><?php the_field("production0{$i}"); ?>：</dt>
+                    <dd><?php the_field("production0{$i}_time"); ?></dd>
                   </div>
-                  <div>
-                    <dt>WordPress：</dt>
-                    <dd>2週間</dd>
-                  </div>
+                  
+                <?php endfor; ?>
+
                 </dl>
               </section>
+            <?php endif; ?>
 
+            <?php if ( get_field('tool') ): ?>
               <section class="p-detail">
                 <h2>使用ツール</h2>
                 <ul>
-                  <li>Visual Studio Code</li>
-                  <li>Figma</li>
-                  <li>WordPress</li>
-                  <li>FileZilla</li>
-                  <li>GitHub</li>
+
+                <?php for ($i = 1; $i <= 10; $i++):
+                  $tool = get_field("tool0{$i}");
+                  if ( empty($tool) ) {
+                    break;
+                  }
+                ?>
+
+                  <li><?php the_field("tool0{$i}"); ?></li>
+                
+                <?php endfor; ?>
+
                 </ul>
               </section>
+            <?php endif; ?>
 
+            <?php if ( get_field('language') ): ?>
               <section class="p-detail">
                 <h2>使用言語</h2>
                 <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>SCSS</li>
-                  <li>JavaScript</li>
-                  <li>PHP</li>
+
+                <?php for ($i = 1; $i <= 10; $i++):
+                  $language = get_field("language0{$i}");
+                  if ( empty($language) ) {
+                    break;
+                  }
+                ?>
+
+                  <li><?php the_field("language0{$i}"); ?></li>
+
+                <?php endfor; ?>
+
                 </ul>
               </section>
+            <?php endif; ?>
+
             </div>
           </div>
 
           <div class="p-achievement__body--text">
-            <p>プロンプ様のwebサイト制作のメインコーダーを担当させていただきました。一部のページを除いたコーディングとWordPress化を行いました。</p>
-            <p>コーディングではPCのファーストビューに配置された画像がどの画面幅でも美しく表示されるよう、レスポンシブの実装に特に力を入れました。</p>
-            <p>WordPress の実装では、プラグインを活用してカスタム投稿、カスタムフィールド、コンタクトフォームを組み込んでいます。導入実績ページについては、同じ構図で作成したいとのご要望に応じて、記事を作成できるように対応しました。</p>
+            <?php the_content(); ?>
           </div>
 
-          <a href="#" class="c-button--link c-shadow p-achievement__body--btn js-btn">visit site</a>
+          <a href="<?php the_field('site_url'); ?>" class="c-button--link c-shadow p-achievement__body--btn js-btn" aria-label="<?php the_title(); ?>">visit site</a>
         </div>
       </section>
+
+      <?php endwhile;
+    else: ?>
+      <p>表示する実績詳細がありません。</p>
+    <?php endif; ?>
+
     </div>
+
+
+    <?php
+      $args = array(
+        'post_type' => 'achievement',
+        'posts_per_page' => -1,
+      );
+      $works_query = new WP_Query( $args );
+
+      if ($works_query -> have_posts()):
+    ?>
 
     <!-- ARCHIVE -->
     <section class="p-archive u-archiveSec">
@@ -104,54 +182,27 @@
 
       <div class="c-wrapper--achievement u-archiveSec__wrapper">
         <ul class="c-outline--works">
-          <li>
-            <a href="#" aria-labelledby="title01">
-              <article class="p-workInfo">
-                <h3 id="title01">2024.7<br>prompt website</h3>
-                <figure class="c-shadow">
-                  <img src="images/works_prompt.png" alt="茶色の背景の落ち着いた雰囲気のwebサイト">
-                </figure>
-              </article>
-            </a>
+
+        <?php
+          while ($works_query -> have_posts()):
+            $works_query -> the_post();
+        ?>
+          <li <?php post_class(); ?>>
+            <?php get_template_part('template/loop', 'work'); ?>
           </li>
-          <li>
-            <a href="#">
-              <article class="p-workInfo">
-                <h3>2024.7<br>prompt website</h3>
-                <figure class="c-shadow">
-                  <img src="images/works_prompt.png" alt="茶色の背景の落ち着いた雰囲気のwebサイト">
-                </figure>
-              </article>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <article class="p-workInfo">
-                <h3>2024.7<br>prompt hamburger shop website</h3>
-                <figure class="c-shadow">
-                  <img src="images/works_prompt.png" alt="茶色の背景の落ち着いた雰囲気のwebサイト">
-                </figure>
-              </article>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <article class="p-workInfo">
-                <h3>2024.7<br>prompt hamburger shop website</h3>
-                <figure class="c-shadow">
-                  <img src="images/works_prompt.png" alt="茶色の背景の落ち着いた雰囲気のwebサイト">
-                </figure>
-              </article>
-            </a>
-          </li>
+        <?php endwhile; ?>
+
         </ul>
   
         <div class="p-archive__man js-target">
           <span class="c-checkman__arm"></span>
           <span class="c-checkman"></span>
         </div>
+
       </div>
     </section>
+
+    <?php endif; ?>
   </main>
 
   <?php get_footer(); ?>
