@@ -108,7 +108,20 @@
     $wp_customize -> add_control('about_sec', array(
       'label' => 'about',
       'section' => 'front_page_settings',
-      'description' => '「about」に表示する固定ページを選択してください。',
+      'description' => '「about」セクションに表示する固定ページを選択してください。',
+      'type' => 'dropdown-pages',
+    ));
+
+    // contact
+    $wp_customize -> add_setting('contact_sec', array(
+      'default' => '',
+      'sanitize_callback' => 'absint',
+    ));
+
+    $wp_customize -> add_control('contact_sec', array(
+      'label' => 'contact',
+      'section' => 'front_page_settings',
+      'description' => '「contact me」セクションに表示する固定ページを選択してください。',
       'type' => 'dropdown-pages',
     ));
   }

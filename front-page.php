@@ -157,6 +157,15 @@
     </section>
     <?php endif; ?>
 
+
+    <?php
+      // カスタマイザーで選択された時に表示
+      $contact_id = get_theme_mod('contact_sec');
+      $contact_sec = get_post($contact_id);
+      
+      if ( $contact_id ):
+    ?>
+
     <!-- CONTACT SECTION -->
     <section id="contact" class="c-section p-contactSec js-contact">
       <div class="p-secTitle js-target">
@@ -169,8 +178,16 @@
       </div>
 
       <div class="p-contactSec__desc">
-        <p>ご検討いただきありがとうございます。<br>どんなことでもお気軽にご相談ください。</p>
-        <a href="contact.html" class="c-button--link c-shadow js-btn">contact</a>
+      <?php 
+        if( !empty($contact_sec -> post_content) ) {
+          echo wp_kses_post($contact_sec -> post_content);
+        } else {
+          echo '<p>お問い合わせはこちら。</p>';
+        }
+      ?>
+
+      <?php $contact_page = get_page_by_path('contact'); ?>
+        <a href="<?php echo esc_url(get_permalink($contact_page -> ID)); ?>" class="c-button--link c-shadow js-btn">contact</a>
         <span class="c-alien--contact"></span>
       </div>
 
@@ -179,6 +196,7 @@
         <div class="c-ufo"></div>
       </div>
     </section>
+    <?php endif; ?>
   </main>
 
   <?php get_footer(); ?>
