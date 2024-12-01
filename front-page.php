@@ -5,8 +5,8 @@
     <!-- FIRST VIEW -->
     <div class="p-fv">
       <div class="p-fv__title js-title">
-        <span>corder</span>
-        <h1><?php bloginfo('name'); ?><br><?php bloginfo('description'); ?></h1>
+        <span><?php bloginfo('description'); ?></span>
+        <h1><?php echo bloginfo('name'); ?><br>portfolio</h1>
       </div>
       <div class="p-img__wrapper">
         <div class="p-fv__img">

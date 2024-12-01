@@ -10,9 +10,9 @@
     $description = get_bloginfo('description', 'display');
 
     if ( is_front_page() && is_home() ) {
-      $title = "$site_title $description";
+      $title = "$site_title portfolio";
     } elseif ( is_singular() ) {
-      $title = "$post_title | $site_title $description";
+      $title = "$post_title | $site_title portfolio";
     }
     return $title;
   }
