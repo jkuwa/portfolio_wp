@@ -126,3 +126,10 @@
     ));
   }
   add_action('customize_register', 'my_portfolio_customize_register');
+
+
+  // --------- コンタクトフォーム ---------
+  function my_portfolio_wpcf7_autop() {
+    return false;
+  }
+  add_filter('wpcf7_autop_or_not', 'my_portfolio_wpcf7_autop');

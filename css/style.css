@@ -151,6 +151,15 @@ textarea:focus-visible {
   opacity: 1;
 }
 
+.c-button--back {
+  margin-top: 40px;
+  padding: 0;
+  width: auto;
+  display: inline-block;
+  background-color: unset;
+  text-decoration: underline;
+}
+
 /* ----- navigation cover ----- */
 .c-cover {
   background: rgba(0, 0, 0, 0.3);
@@ -2189,95 +2198,102 @@ body.is-open {
     padding-bottom: 120px;
   }
 }
-.p-contact__input p {
+.p-contact__desc {
   font-size: 1.4rem;
 }
 @media (min-width: 768px) {
-  .p-contact__input p {
+  .p-contact__desc {
     text-align: center;
   }
 }
-.p-contact__input p br {
+.p-contact__desc br {
   display: none;
 }
 @media (min-width: 768px) {
-  .p-contact__input p br {
+  .p-contact__desc br {
     display: block;
   }
 }
 @media (min-width: 1024px) {
-  .p-contact__input p br {
+  .p-contact__desc br {
     display: none;
   }
 }
-.p-contact__input p span {
+.p-contact__desc span {
   font-weight: 700;
+}
+.p-contact__link--home {
+  margin-top: 40px;
+  text-decoration: underline;
 }
 
 /* ----- contact form ----- */
-.p-form {
+form {
   margin-top: 56px;
 }
 @media (min-width: 768px) {
-  .p-form {
+  form {
     margin-top: 76px;
   }
 }
 @media (min-width: 1024px) {
-  .p-form {
+  form {
     margin-top: 96px;
   }
 }
-.p-form ul li {
+form ul li {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 @media (min-width: 1024px) {
-  .p-form ul li {
+  form ul li {
     flex-direction: row;
     justify-content: space-between;
   }
 }
-.p-form ul li:not(:first-child) {
+form ul li:not(:first-child) {
   margin-top: 40px;
 }
 @media (min-width: 768px) {
-  .p-form ul li:not(:first-child) {
+  form ul li:not(:first-child) {
     margin-top: 50px;
   }
 }
-.p-form label {
+form ul li > span {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  form ul li > span {
+    flex: 1;
+  }
+}
+form label {
   font-size: 1.6rem;
   font-weight: 500;
 }
 @media (min-width: 1024px) {
-  .p-form label {
+  form label {
     width: 196px;
-  }
-}
-.p-form label br {
-  display: none;
-}
-@media (min-width: 1024px) {
-  .p-form label br {
     display: block;
   }
 }
-.p-form label span {
+form label span {
   margin-left: 8px;
+  display: inline;
 }
 @media (min-width: 768px) {
-  .p-form label span {
+  form label span {
     margin-left: 16px;
   }
 }
 @media (min-width: 1024px) {
-  .p-form label span {
+  form label span {
     margin-left: 0;
+    display: block;
   }
 }
-.p-form input, .p-form textarea {
+form input, form textarea {
   padding: 18px 30px;
   width: 100%;
   border-radius: 3rem;
@@ -2286,39 +2302,63 @@ body.is-open {
   font-weight: 400;
 }
 @media (min-width: 768px) {
-  .p-form input, .p-form textarea {
+  form input, form textarea {
     padding-inline: 46px;
   }
 }
-@media (min-width: 1024px) {
-  .p-form input, .p-form textarea {
-    flex: 1;
-  }
-}
-.p-form input::-moz-placeholder, .p-form textarea::-moz-placeholder {
+form input::-moz-placeholder, form textarea::-moz-placeholder {
   opacity: 0.6;
 }
-.p-form input::placeholder, .p-form textarea::placeholder {
+form input::placeholder, form textarea::placeholder {
   opacity: 0.6;
 }
-.p-form textarea {
+form textarea {
   min-height: 200px;
 }
-.p-form button {
+form button {
   margin: 40px auto 0;
   width: 24.5rem;
   font-weight: 700;
 }
 @media (min-width: 768px) {
-  .p-form button {
+  form button {
     margin-top: 50px;
     width: 30rem;
   }
 }
 @media (min-width: 1024px) {
-  .p-form button {
+  form button {
     margin-top: 100px;
     width: 34rem;
+  }
+}
+form dl > div {
+  padding-bottom: 8px;
+  border-bottom: dotted 2px #fff;
+}
+@media (min-width: 768px) {
+  form dl > div {
+    display: flex;
+  }
+}
+form dl > div:not(:first-child) {
+  margin-top: 32px;
+}
+form dl > div dt {
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  form dl > div dt {
+    width: 196px;
+  }
+}
+form dl > div dd {
+  margin: 16px 0 0 16px;
+}
+@media (min-width: 768px) {
+  form dl > div dd {
+    margin-top: 0;
+    flex: 1;
   }
 }
 

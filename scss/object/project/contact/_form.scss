@@ -1,7 +1,7 @@
 @use '../../../foundation/variables' as *;
 
 /* ----- contact form ----- */
-.p-form {
+form {
   margin-top: 56px;
 
   @include breakpoint(tablet) {
@@ -29,6 +29,14 @@
           margin-top: 50px;
         }
       }
+
+      > span {
+        width: 100%;
+  
+        @include breakpoint(pc) {
+          flex: 1;
+        }
+      }
     }
   }
 
@@ -38,24 +46,19 @@
     
     @include breakpoint(pc) {
       width: 196px;
-    }
-
-    br {
-      display: none;
-
-      @include breakpoint(pc) {
-        display: block;
-      }
+      display: block;
     }
 
     span {
       margin-left: 8px;
+      display: inline;
 
       @include breakpoint(tablet) {
         margin-left: 16px;
       }
       @include breakpoint(pc) {
         margin-left: 0;
+        display: block;
       }
     }
   }
@@ -70,9 +73,6 @@
 
     @include breakpoint(tablet) {
       padding-inline: 46px;
-    }
-    @include breakpoint(pc) {
-      flex: 1;
     }
 
     &::placeholder {
@@ -96,6 +96,38 @@
     @include breakpoint(pc) {
       margin-top: 100px;
       width: 34rem;
+    }
+  }
+
+  // 確認画面
+  dl {
+    > div {
+      padding-bottom: 8px;
+      border-bottom: dotted 2px $white-color;
+
+      @include breakpoint(tablet) {
+        display: flex;
+      }
+
+      &:not(:first-child) {
+        margin-top: 32px;
+      }
+
+      dt {
+        font-weight: 500;
+
+        @include breakpoint(tablet) {
+          width: 196px;
+        }
+      }
+      dd {
+        margin: 16px 0 0 16px;
+
+        @include breakpoint(tablet) {
+          margin-top: 0;
+          flex: 1;
+        }
+      }
     }
   }
 }

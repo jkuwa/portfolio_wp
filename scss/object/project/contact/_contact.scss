@@ -50,28 +50,33 @@
     @include breakpoint(pc) {
       padding-bottom: 120px;
     }
+  }
 
-    p {
-      font-size: 1.4rem;
+  &__desc {
+    font-size: 1.4rem;
+
+    @include breakpoint(tablet) {
+      text-align: center;
+    }
+
+    br {
+      display: none;
 
       @include breakpoint(tablet) {
-        text-align: center;
+        display: block;
       }
-
-      br {
+      @include breakpoint(pc) {
         display: none;
-
-        @include breakpoint(tablet) {
-          display: block;
-        }
-        @include breakpoint(pc) {
-          display: none;
-        }
-      }
-
-      span {
-        font-weight: 700;
       }
     }
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__link--home {
+    margin-top: 40px;
+    text-decoration: underline;
   }
 }
