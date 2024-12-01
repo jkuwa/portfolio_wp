@@ -75,8 +75,10 @@
     }
   }
 
-  &__link--home {
-    margin-top: 40px;
-    text-decoration: underline;
+  &__btn--back {
+    padding: 0;
+    width: auto;
+    display: inline-block;
+    background-color: unset;
   }
 }

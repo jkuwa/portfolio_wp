@@ -151,12 +151,8 @@ textarea:focus-visible {
   opacity: 1;
 }
 
-.c-button--back {
+.c-button--underLine {
   margin-top: 40px;
-  padding: 0;
-  width: auto;
-  display: inline-block;
-  background-color: unset;
   text-decoration: underline;
 }
 
@@ -2222,9 +2218,11 @@ body.is-open {
 .p-contact__desc span {
   font-weight: 700;
 }
-.p-contact__link--home {
-  margin-top: 40px;
-  text-decoration: underline;
+.p-contact__btn--back {
+  padding: 0;
+  width: auto;
+  display: inline-block;
+  background-color: unset;
 }
 
 /* ----- contact form ----- */
