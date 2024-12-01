@@ -773,28 +773,19 @@ textarea:focus-visible {
 /* ----- achievement ----- */
 @-webkit-keyframes checkman {
   0% {
-    transform: translateX(-100%) rotate(-5deg);
+    transform: translateX(-80%) rotate(-5deg);
   }
-  12.5% {
-    transform: translateX(-87.5%) rotate(5deg);
+  20% {
+    transform: translateX(-64%) rotate(5deg);
   }
-  25% {
-    transform: translateX(-75%) rotate(-5deg);
+  40% {
+    transform: translateX(-48%) rotate(-5deg);
   }
-  37.5% {
-    transform: translateX(-62.5%) rotate(5deg);
+  60% {
+    transform: translateX(-32%) rotate(5deg);
   }
-  50% {
-    transform: translateX(-50%) rotate(-5deg);
-  }
-  62.5% {
-    transform: translateX(-37.5%) rotate(5deg);
-  }
-  75% {
-    transform: translateX(-25%) rotate(-5deg);
-  }
-  87.5% {
-    transform: translateX(-12.5%) rotate(5deg);
+  80% {
+    transform: translateX(-16%) rotate(-5deg);
   }
   100% {
     transform: translateX(0) rotate(0);
@@ -802,28 +793,19 @@ textarea:focus-visible {
 }
 @keyframes checkman {
   0% {
-    transform: translateX(-100%) rotate(-5deg);
+    transform: translateX(-80%) rotate(-5deg);
   }
-  12.5% {
-    transform: translateX(-87.5%) rotate(5deg);
+  20% {
+    transform: translateX(-64%) rotate(5deg);
   }
-  25% {
-    transform: translateX(-75%) rotate(-5deg);
+  40% {
+    transform: translateX(-48%) rotate(-5deg);
   }
-  37.5% {
-    transform: translateX(-62.5%) rotate(5deg);
+  60% {
+    transform: translateX(-32%) rotate(5deg);
   }
-  50% {
-    transform: translateX(-50%) rotate(-5deg);
-  }
-  62.5% {
-    transform: translateX(-37.5%) rotate(5deg);
-  }
-  75% {
-    transform: translateX(-25%) rotate(-5deg);
-  }
-  87.5% {
-    transform: translateX(-12.5%) rotate(5deg);
+  80% {
+    transform: translateX(-16%) rotate(-5deg);
   }
   100% {
     transform: translateX(0) rotate(0);
@@ -2113,7 +2095,7 @@ body.is-open {
   position: absolute;
   left: -51px;
   bottom: -144.3px;
-  transform: translateX(-100%);
+  transform: translateX(-80%);
 }
 @media (min-width: 768px) {
   .p-archive__man {
@@ -2130,12 +2112,12 @@ body.is-open {
   }
 }
 .p-archive__man.is-animated {
-  -webkit-animation: checkman 3s forwards;
-          animation: checkman 3s forwards;
+  -webkit-animation: checkman 2.5s forwards;
+          animation: checkman 2.5s forwards;
 }
 .p-archive__man.is-animated .c-checkman__arm {
-  -webkit-animation: armMove 2.5s ease-in-out 3s infinite;
-          animation: armMove 2.5s ease-in-out 3s infinite;
+  -webkit-animation: armMove 2.5s ease-in-out 2.5s infinite;
+          animation: armMove 2.5s ease-in-out 2.5s infinite;
 }
 
 /* ----- contact page ----- */

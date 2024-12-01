@@ -56,7 +56,7 @@
     position: absolute;
     left: -51px;
     bottom: -144.3px;
-    transform: translateX(-100%);
+    transform: translateX(-80%);
 
     @include breakpoint(tablet) {
       width: 161px;
@@ -70,10 +70,10 @@
     }
 
     &.is-animated {
-      animation: checkman 3s forwards;
+      animation: checkman 2.5s forwards;
 
       .c-checkman__arm {
-        animation: armMove 2.5s ease-in-out 3s infinite;
+        animation: armMove 2.5s ease-in-out 2.5s infinite;
       }
     }
   }
