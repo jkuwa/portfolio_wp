@@ -10,4 +10,4 @@
     <a href="/" class="c-button--underLine">home</a>
   </main>
 
-  <?php get_footer(); ?>
+<?php get_footer(); ?>
