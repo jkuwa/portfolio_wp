@@ -18,14 +18,10 @@
       </div>
     </div>
 
-    <?php
-      // カスタマイザーで選択された時に表示
-      $about_id = get_theme_mod('about_sec');
-      $about = get_post($about_id);
-      
-      if ($about_id):
+    <?php 
+      $about = get_page_by_path('about');
+      if ( $about ):
     ?>
-
       <!-- ABOUT SECTION -->
       <section id="about" class="c-section p-about">
         <div class="p-secTitle js-target">
@@ -47,7 +43,7 @@
                 </clipPath>
               </defs>
 
-              <?php $avatar_url = get_the_post_thumbnail_url($about_id, 'full') ?:  get_theme_file_uri('/images/about_noimage.png'); ?>
+              <?php $avatar_url = get_the_post_thumbnail_url($about -> ID, 'full') ?:  get_theme_file_uri('/images/about_noimage.png'); ?>
 
               <image href="<?php echo esc_url($avatar_url); ?>" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" clip-path="url(#about_mask)"></image>
 
@@ -159,11 +155,8 @@
 
 
     <?php
-      // カスタマイザーで選択された時に表示
-      $contact_id = get_theme_mod('contact_sec');
-      $contact_sec = get_post($contact_id);
-      
-      if ( $contact_id ):
+      $contact_sec = get_page_by_path('contact_sec');
+      if ( $contact_sec ):
     ?>
 
     <!-- CONTACT SECTION -->

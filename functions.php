@@ -93,38 +93,6 @@
         'type' => 'url',
       ));
     }
-
-    // フロントページ設定
-    $wp_customize -> add_section('front_page_settings', array(
-      'title' => 'フロントページ設定',
-      'priority' => 180,
-    ));
-
-    // about
-    $wp_customize -> add_setting('about_sec', array(
-      'default' => '',
-      'sanitize_callback' => 'absint',
-    ));
-
-    $wp_customize -> add_control('about_sec', array(
-      'label' => 'about',
-      'section' => 'front_page_settings',
-      'description' => '「about」セクションに表示する固定ページを選択してください。',
-      'type' => 'dropdown-pages',
-    ));
-
-    // contact
-    $wp_customize -> add_setting('contact_sec', array(
-      'default' => '',
-      'sanitize_callback' => 'absint',
-    ));
-
-    $wp_customize -> add_control('contact_sec', array(
-      'label' => 'contact',
-      'section' => 'front_page_settings',
-      'description' => '「contact me」セクションに表示する固定ページを選択してください。',
-      'type' => 'dropdown-pages',
-    ));
   }
   add_action('customize_register', 'my_portfolio_customize_register');
 
