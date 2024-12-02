@@ -169,6 +169,7 @@ jQuery(function() {
 
     btn.addEventListener('mouseenter', hover);
     btn.addEventListener('mouseleave', leave);
+    btn.addEventListener('click', leave);
   });
 
 
