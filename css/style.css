@@ -151,9 +151,9 @@ textarea:focus-visible {
   opacity: 1;
 }
 
-.c-button--underLine {
+.c-button--none {
   margin-top: 40px;
-  text-decoration: underline;
+  color: #333;
 }
 
 /* ----- navigation cover ----- */
@@ -2200,11 +2200,30 @@ body.is-open {
 .p-contact__desc span {
   font-weight: 700;
 }
+.p-contact__btn i {
+  margin-right: 8px;
+  font-size: 2rem;
+}
+@media (min-width: 768px) {
+  .p-contact__btn i {
+    font-size: 2.4rem;
+  }
+}
+.p-contact__btn i:has(+ input:hover) {
+  transform: translateX(-8px);
+}
 .p-contact__btn--back {
   padding: 0;
   width: auto;
   display: inline-block;
   background-color: unset;
+  font-size: 2rem;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .p-contact__btn--back {
+    font-size: 2.4rem;
+  }
 }
 
 /* ----- contact form ----- */

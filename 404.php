@@ -7,7 +7,7 @@
       <div class="c-alien03 -error"></div>
     </div>
     <p class="p-404__subTitle">page not found</p>
-    <a href="/" class="c-button--underLine">home</a>
+    <a href="/" class="c-button--none">home</a>
   </main>
 
 <?php get_footer(); ?>
