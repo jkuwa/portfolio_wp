@@ -103,4 +103,10 @@
       }
     }
   }
+
+  &__thanks {
+    @include breakpoint(tablet) {
+      text-align: center;
+    }
+  }
 }

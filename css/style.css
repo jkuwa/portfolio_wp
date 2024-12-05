@@ -2225,6 +2225,11 @@ body.is-open {
     font-size: 2.4rem;
   }
 }
+@media (min-width: 768px) {
+  .p-contact__thanks {
+    text-align: center;
+  }
+}
 
 /* ----- contact form ----- */
 form {
