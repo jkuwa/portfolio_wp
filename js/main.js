@@ -129,7 +129,6 @@ jQuery(function() {
     btn.innerHTML = newText;
   });
 
-  // アニメーション
   btns.forEach((btn) => {
     const before = btn.querySelector(".js-before");
     const after = btn.querySelector(".js-after");
@@ -167,11 +166,22 @@ jQuery(function() {
       });
     };
 
-    btn.addEventListener('mouseenter', hover);
-    btn.addEventListener('mouseleave', leave);
-    btn.addEventListener('click', leave);
-  });
+    // タッチデバイスを検出
+    const isTouchDevice = () => {
+      return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    };
 
+    if ( isTouchDevice() ) {
+      btn.addEventListener('touchstart', hover);
+      btn.addEventListener('touchend', () => {
+        setTimeout(leave, 600);
+      });
+    } else {
+      btn.addEventListener('mouseenter', hover);
+      btn.addEventListener('mouseleave', leave);
+    }
+  });
+  
 
   /* ---------- セクションタイトル アニメーション ---------- */
   const targets = document.querySelectorAll(".js-target");
