@@ -1,7 +1,7 @@
 @use '../../../foundation/variables' as *;
 
 /* ----- contact form ----- */
-form {
+.p-form {
   margin-top: 56px;
 
   @include breakpoint(tablet) {
@@ -84,9 +84,10 @@ form {
     min-height: 200px;
   }
 
-  button {
+  &__btn {
     margin: 40px auto 0;
     width: 24.5rem;
+    justify-content: stretch;
     font-weight: 700;
 
     @include breakpoint(tablet) {
@@ -96,6 +97,46 @@ form {
     @include breakpoint(pc) {
       margin-top: 100px;
       width: 34rem;
+    }
+
+    .p-btn {
+      width: 100%;
+
+      > span {
+        display: block;
+        width: 100%;
+      }
+
+      input {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        display: grid;
+        place-content: center;
+        font-size: 2.4rem;
+        line-height: 1.1;
+        font-weight: 700;
+
+        @include breakpoint(tablet) {
+          font-size: 3.2rem;
+        }
+      }
+
+      &__before {
+        input {
+          background-color: $black-color;
+          color: $white-color;
+        }
+      }
+      &__after {
+        input {
+          color: $font-color;
+        }
+      }
+    }
+
+    .wpcf7-spinner {
+      display: none;
     }
   }
 
@@ -127,6 +168,36 @@ form {
           margin-top: 0;
           flex: 1;
         }
+      }
+    }
+  }
+
+  // 戻るボタン
+  &__back {
+
+    i {
+      margin-right: 8px;
+      font-size: 2rem;
+
+      @include breakpoint(tablet) {
+        font-size: 2.4rem;
+      }
+
+      &:has(+ input:hover) {
+        transform: translateX(-8px);
+      }
+    }
+
+    input[type="button"] {
+      padding: 0;
+      width: auto;
+      display: inline-block;
+      background-color: unset;
+      font-size: 2rem;
+      font-weight: 500;
+
+      @include breakpoint(tablet) {
+        font-size: 2.4rem;
       }
     }
   }

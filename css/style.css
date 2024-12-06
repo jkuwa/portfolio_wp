@@ -2200,31 +2200,6 @@ body.is-open {
 .p-contact__desc span {
   font-weight: 700;
 }
-.p-contact__btn i {
-  margin-right: 8px;
-  font-size: 2rem;
-}
-@media (min-width: 768px) {
-  .p-contact__btn i {
-    font-size: 2.4rem;
-  }
-}
-.p-contact__btn i:has(+ input:hover) {
-  transform: translateX(-8px);
-}
-.p-contact__btn--back {
-  padding: 0;
-  width: auto;
-  display: inline-block;
-  background-color: unset;
-  font-size: 2rem;
-  font-weight: 500;
-}
-@media (min-width: 768px) {
-  .p-contact__btn--back {
-    font-size: 2.4rem;
-  }
-}
 @media (min-width: 768px) {
   .p-contact__thanks {
     text-align: center;
@@ -2232,72 +2207,72 @@ body.is-open {
 }
 
 /* ----- contact form ----- */
-form {
+.p-form {
   margin-top: 56px;
 }
 @media (min-width: 768px) {
-  form {
+  .p-form {
     margin-top: 76px;
   }
 }
 @media (min-width: 1024px) {
-  form {
+  .p-form {
     margin-top: 96px;
   }
 }
-form ul li {
+.p-form ul li {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 @media (min-width: 1024px) {
-  form ul li {
+  .p-form ul li {
     flex-direction: row;
     justify-content: space-between;
   }
 }
-form ul li:not(:first-child) {
+.p-form ul li:not(:first-child) {
   margin-top: 40px;
 }
 @media (min-width: 768px) {
-  form ul li:not(:first-child) {
+  .p-form ul li:not(:first-child) {
     margin-top: 50px;
   }
 }
-form ul li > span {
+.p-form ul li > span {
   width: 100%;
 }
 @media (min-width: 1024px) {
-  form ul li > span {
+  .p-form ul li > span {
     flex: 1;
   }
 }
-form label {
+.p-form label {
   font-size: 1.6rem;
   font-weight: 500;
 }
 @media (min-width: 1024px) {
-  form label {
+  .p-form label {
     width: 196px;
     display: block;
   }
 }
-form label span {
+.p-form label span {
   margin-left: 8px;
   display: inline;
 }
 @media (min-width: 768px) {
-  form label span {
+  .p-form label span {
     margin-left: 16px;
   }
 }
 @media (min-width: 1024px) {
-  form label span {
+  .p-form label span {
     margin-left: 0;
     display: block;
   }
 }
-form input, form textarea {
+.p-form input, .p-form textarea {
   padding: 18px 30px;
   width: 100%;
   border-radius: 3rem;
@@ -2306,63 +2281,121 @@ form input, form textarea {
   font-weight: 400;
 }
 @media (min-width: 768px) {
-  form input, form textarea {
+  .p-form input, .p-form textarea {
     padding-inline: 46px;
   }
 }
-form input::-moz-placeholder, form textarea::-moz-placeholder {
+.p-form input::-moz-placeholder, .p-form textarea::-moz-placeholder {
   opacity: 0.6;
 }
-form input::placeholder, form textarea::placeholder {
+.p-form input::placeholder, .p-form textarea::placeholder {
   opacity: 0.6;
 }
-form textarea {
+.p-form textarea {
   min-height: 200px;
 }
-form button {
+.p-form__btn {
   margin: 40px auto 0;
   width: 24.5rem;
+  justify-content: stretch;
   font-weight: 700;
 }
 @media (min-width: 768px) {
-  form button {
+  .p-form__btn {
     margin-top: 50px;
     width: 30rem;
   }
 }
 @media (min-width: 1024px) {
-  form button {
+  .p-form__btn {
     margin-top: 100px;
     width: 34rem;
   }
 }
-form dl > div {
+.p-form__btn .p-btn {
+  width: 100%;
+}
+.p-form__btn .p-btn > span {
+  display: block;
+  width: 100%;
+}
+.p-form__btn .p-btn input {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .p-form__btn .p-btn input {
+    font-size: 3.2rem;
+  }
+}
+.p-form__btn .p-btn__before input {
+  background-color: #000;
+  color: #fff;
+}
+.p-form__btn .p-btn__after input {
+  color: #333;
+}
+.p-form__btn .wpcf7-spinner {
+  display: none;
+}
+.p-form dl > div {
   padding-bottom: 8px;
   border-bottom: dotted 2px #fff;
 }
 @media (min-width: 768px) {
-  form dl > div {
+  .p-form dl > div {
     display: flex;
   }
 }
-form dl > div:not(:first-child) {
+.p-form dl > div:not(:first-child) {
   margin-top: 32px;
 }
-form dl > div dt {
+.p-form dl > div dt {
   font-weight: 500;
 }
 @media (min-width: 768px) {
-  form dl > div dt {
+  .p-form dl > div dt {
     width: 196px;
   }
 }
-form dl > div dd {
+.p-form dl > div dd {
   margin: 16px 0 0 16px;
 }
 @media (min-width: 768px) {
-  form dl > div dd {
+  .p-form dl > div dd {
     margin-top: 0;
     flex: 1;
+  }
+}
+.p-form__back i {
+  margin-right: 8px;
+  font-size: 2rem;
+}
+@media (min-width: 768px) {
+  .p-form__back i {
+    font-size: 2.4rem;
+  }
+}
+.p-form__back i:has(+ input:hover) {
+  transform: translateX(-8px);
+}
+.p-form__back input[type=button] {
+  padding: 0;
+  width: auto;
+  display: inline-block;
+  background-color: unset;
+  font-size: 2rem;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .p-form__back input[type=button] {
+    font-size: 2.4rem;
   }
 }
 
