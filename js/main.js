@@ -179,6 +179,9 @@ jQuery(function() {
     } else {
       btn.addEventListener('mouseenter', hover);
       btn.addEventListener('mouseleave', leave);
+      btn.addEventListener('click', () => {
+        setTimeout(leave, 600);
+      });
     }
   });
   
