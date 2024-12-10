@@ -52,6 +52,7 @@
     span {
       margin-left: 8px;
       display: inline;
+      font-size: 1.4rem;
 
       @include breakpoint(tablet) {
         margin-left: 16px;

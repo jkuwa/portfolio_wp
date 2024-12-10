@@ -2263,6 +2263,7 @@ body.is-open {
 .p-form label span {
   margin-left: 8px;
   display: inline;
+  font-size: 1.4rem;
 }
 @media (min-width: 768px) {
   .p-form label span {
