@@ -107,13 +107,13 @@
                 <ul>
 
                 <?php for ($i = 1; $i <= 10; $i++):
-                  $tool = get_field("tool0{$i}");
+                  $tool = get_field("tool_{$i}");
                   if ( empty($tool) ) {
                     break;
                   }
                 ?>
 
-                  <li><?php the_field("tool0{$i}"); ?></li>
+                  <li><?php the_field("tool_{$i}"); ?></li>
                 
                 <?php endfor; ?>
 
@@ -127,13 +127,13 @@
                 <ul>
 
                 <?php for ($i = 1; $i <= 10; $i++):
-                  $language = get_field("language0{$i}");
+                  $language = get_field("language_{$i}");
                   if ( empty($language) ) {
                     break;
                   }
                 ?>
 
-                  <li><?php the_field("language0{$i}"); ?></li>
+                  <li><?php the_field("language_{$i}"); ?></li>
 
                 <?php endfor; ?>
 
