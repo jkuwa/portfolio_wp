@@ -65,124 +65,105 @@ jQuery(function() {
 
 {
   /* ---------- ホバーアニメーション ---------- */
-  // ナビリンク
-  const links = document.querySelectorAll(".p-nav__list li a");
-
   // テキストを生成
-  links.forEach((link) => {
-    const text = link.innerHTML;
-    const textBefore = '<span class="p-navLink__before js-before">' + text + '</span>';
-    const textAfter = '<span class="p-navLink__after js-after">' + text + '</span>';
-    const newText = '<div class=p-navLink>' + textBefore + textAfter + '</div>';
-    link.innerHTML = newText;
-  });
+  const generateText = ( element, beforeClass, afterClass, wrapperClass) => {
+    const text = element.innerHTML;
+    const textBefore = `<span class="${beforeClass}">${text}</span>`;
+    const textAfter = `<span class="${afterClass}">${text}</span>`;
+    const newText = `<div class="${wrapperClass}">${textBefore}${textAfter}</div>`;
+    element.innerHTML = newText;
+  }
 
   // アニメーション
-  links.forEach((link) => {
-    let mm = gsap.matchMedia();
-    const before = link.querySelector(".js-before");
-    const after = link.querySelector(".js-after");
+  const setupHoverAnimation = ( elements, options) => {
+    elements.forEach( (el) => {
+      const before = el.querySelector(".js-before");
+      const after = el.querySelector(".js-after");
 
-    const hover = () => {
-      gsap.to( before, {
-        yPercent: -100,
-        ease: 'bounce.out',
-      });
-      gsap.to( after, {
-        yPercent: -100,
-        ease: 'bounce.out',
-      });
-    };
-    const leave = () => {
-      gsap.to( before, {
-        yPercent: 0,
-        ease: 'bounce.out',
-      });
-      gsap.to( after, {
-        yPercent: 0,
-        ease: 'bounce.out',
-      });
-    };
+      const hover = () => {
+        gsap.to( before, {
+          yPercent: options.hover.yPercent,
+          ease: 'bounce.out',
+        });
+        gsap.to( after, {
+          yPercent: options.hover.yPercent,
+          ease: 'bounce.out',
+        });
+        if (options.hover.backgroundColor) {
+          gsap.to( el, {
+            backgroundColor: options.hover.backgroundColor,
+            duration: 0.3,
+          });
+        }
+      }
+      const leave = () => {
+        gsap.to( before, {
+          yPercent: 0,
+          ease: 'bounce.out',
+        });
+        gsap.to( after, {
+          yPercent: 0,
+          ease: 'bounce.out',
+        });
+        if (options.leave.backgroundColor) {
+          gsap.to( el, {
+            backgroundColor: options.leave.backgroundColor,
+            duration: 0.3,
+          });
+        }
+      };
 
-    // breakpoint 以上で実行
-    mm.add('(min-width: 768px)', () => {
-      link.addEventListener('mouseenter', hover);
-      link.addEventListener('mouseleave', leave);
-
-      return() => {
-        link.removeEventListener('mouseenter', hover);
-        link.removeEventListener('mouseleave', leave);
+      // matchMedia の指定があれば breakpoint 以上で実行
+      if (options.matchMedia) {
+        const mm = gsap.matchMedia();
+        mm.add( options.matchMedia, () => {
+          el.addEventListener('mouseenter', hover);
+          el.addEventListener('mouseleave', leave);
+    
+          return() => {
+            el.removeEventListener('mouseenter', hover);
+            el.removeEventListener('mouseleave', leave);
+          };
+        });
+      } else {
+        // タッチデバイスを検出
+        const isTouchDevice = () => {
+          return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+        };
+        if ( isTouchDevice() ) {
+          el.addEventListener('touchstart', hover);
+          el.addEventListener('touchend', () => {
+            setTimeout(leave, 600);
+          });
+        } else {
+          el.addEventListener('mouseenter', hover);
+          el.addEventListener('mouseleave', leave);
+          el.addEventListener('click', () => {
+            setTimeout(leave, 600);
+          });
+        }
       }
     });
-  });
+  };
 
+  // ナビリンク
+  const links = document.querySelectorAll(".p-nav__list li a");
+  links.forEach((link) => {
+    generateText( link, "p-navLink__before js-before", "p-navLink__after js-after", "p-navLink");
+  });
+  setupHoverAnimation( links, {
+    hover: { yPercent: -100 },
+    matchMedia: '(min-width: 768px)',
+  });
 
   // ボタン
-  const btns = document.querySelectorAll(".js-btn");
-
-  // テキストを生成
-  btns.forEach((btn) => {
-    const text = btn.innerHTML;
-    const textBefore = '<span class="p-btn__before js-before">' + text + '</span>';
-    const textAfter = '<span class="p-btn__after js-after">' + text + '</span>';
-    const newText = '<div class=p-btn>' + textBefore + textAfter + '</div>';
-    btn.innerHTML = newText;
+  const buttons = document.querySelectorAll(".js-btn");
+  buttons.forEach( (btn) => {
+    generateText( btn, "p-btn__before js-before", "p-btn__after js-after", "p-btn");
   });
-
-  btns.forEach((btn) => {
-    const before = btn.querySelector(".js-before");
-    const after = btn.querySelector(".js-after");
-
-    const hover = () => {
-      gsap.to( btn, {
-        backgroundColor: "#fff",
-        duration: 0.3,
-      });
-      gsap.to( before, {
-        yPercent: -170,
-        ease: "bounce.out",
-        duration: 0.4,
-      });
-      gsap.to( after, {
-        yPercent: -170,
-        ease: "bounce.out",
-        duration: 0.4,
-      });
-    };
-    const leave = () => {
-      gsap.to( btn, {
-        backgroundColor: "#000",
-        duration: 0.3,
-      });
-      gsap.to( before, {
-        yPercent: 0,
-        ease: 'bounce.out',
-        duration: 0.4,
-      });
-      gsap.to( after, {
-        yPercent: 0,
-        ease: 'bounce.out',
-        duration: 0.4,
-      });
-    };
-
-    // タッチデバイスを検出
-    const isTouchDevice = () => {
-      return "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    };
-
-    if ( isTouchDevice() ) {
-      btn.addEventListener('touchstart', hover);
-      btn.addEventListener('touchend', () => {
-        setTimeout(leave, 600);
-      });
-    } else {
-      btn.addEventListener('mouseenter', hover);
-      btn.addEventListener('mouseleave', leave);
-      btn.addEventListener('click', () => {
-        setTimeout(leave, 600);
-      });
-    }
+  setupHoverAnimation( buttons, {
+    hover: { yPercent: -170, backgroundColor: "#fff" },
+    leave: { backgroundColor: "#000" },
   });
   
 
