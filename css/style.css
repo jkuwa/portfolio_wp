@@ -1877,6 +1877,10 @@ body.is-open {
     margin-top: 24px;
   }
 }
+.p-achievement__head dl dd + dd::before {
+  content: " / ";
+  white-space: pre;
+}
 .p-achievement__head a {
   text-decoration: underline;
 }

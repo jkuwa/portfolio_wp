@@ -38,8 +38,12 @@
           <?php if ( get_field('github_coding') || get_field('github_wp') ): ?>
             <div>
               <dt>GitHub：</dt>
+              <?php if ( get_field('github_coding') ): ?>
               <dd><a href="<?php the_field('github_coding'); ?>" aria-label="GitHubリポジトリ（コーディング）">coding</a></dd>
+              <?php endif;
+              if ( get_field('github_wp') ): ?>
               <dd><a href="<?php the_field('github_wp'); ?>" aria-label="GitHubリポジトリ（WordPress化）">WordPress</a></dd>
+              <?php endif; ?>
             </div>
           <?php endif; ?>
 

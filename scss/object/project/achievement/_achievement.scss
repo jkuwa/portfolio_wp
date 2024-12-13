@@ -37,6 +37,11 @@
       @include breakpoint(tablet) {
         margin-top: 24px;
       }
+
+      dd + dd::before {
+        content: " / ";
+        white-space: pre;
+      }
     }
 
     a {
