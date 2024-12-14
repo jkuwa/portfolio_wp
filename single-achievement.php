@@ -34,6 +34,21 @@
               <dd><a href="<?php the_field('site_url'); ?>" aria-label="<?php the_title(); ?>"><?php the_field('site_url'); ?></a></dd>
             </div>
           <?php endif; ?>
+          <?php if ( get_field('basic_authentication') ) : ?>
+            <div class="p-achievement__note">
+              <p>※アクセス制限をかけています。</p>
+              <dl>
+                <div>
+                  <dt>ユーザー名：</dt>
+                  <dd><?php the_field('user_name'); ?></dd>
+                </div>
+                <div>
+                  <dt>パスワード：</dt>
+                  <dd><?php the_field('pass'); ?></dd>
+                </div>
+              </dl>
+            </div>
+          <?php endif; ?>
 
           <?php if ( get_field('github_coding') || get_field('github_wp') ): ?>
             <div>
