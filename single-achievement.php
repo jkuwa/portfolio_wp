@@ -142,7 +142,7 @@
 
             <?php if ( get_field('language') ): ?>
               <section class="p-detail">
-                <h2>使用言語</h2>
+                <h2>使用スキル</h2>
                 <ul>
 
                 <?php for ($i = 1; $i <= 10; $i++):
