@@ -22,7 +22,10 @@
   }
 
   img {
+    aspect-ratio: 16 / 10;
     border-radius: 15px;
     border: 3px solid $black-color;
+    object-fit: cover;
+    object-position: top left;
   }
 }

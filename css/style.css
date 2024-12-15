@@ -1747,8 +1747,13 @@ body.is-open {
   transform: translateZ(0);
 }
 .p-workInfo img {
+  aspect-ratio: 16/10;
   border-radius: 15px;
   border: 3px solid #000;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top left;
+     object-position: top left;
 }
 
 /* ----- contact section ----- */
