@@ -2333,13 +2333,16 @@ body.is-open {
   .p-form span[data-name=privacy-policy] {
     margin-top: 100px;
   }
-  .p-form span[data-name=privacy-policy] label, .p-form span[data-name=privacy-policy] span {
-    display: inline;
-  }
 }
 .p-form span[data-name=privacy-policy] span {
   margin: 0;
   font-size: 1.6rem;
+}
+.p-form span[data-name=privacy-policy] label {
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .p-form span[data-name=privacy-policy] input[type=checkbox] {
   width: auto;
