@@ -2320,20 +2320,19 @@ body.is-open {
   min-height: 200px;
 }
 .p-form__btn {
-  margin: 40px auto 0;
+  margin: 32px auto 0;
   width: 24.5rem;
   justify-content: stretch;
   font-weight: 700;
 }
 @media (min-width: 768px) {
   .p-form__btn {
-    margin-top: 50px;
+    margin-top: 40px;
     width: 30rem;
   }
 }
 @media (min-width: 1024px) {
   .p-form__btn {
-    margin-top: 100px;
     width: 34rem;
   }
 }
@@ -2398,6 +2397,20 @@ body.is-open {
     flex: 1;
   }
 }
+.p-form p {
+  margin-top: 56px;
+  font-size: 1.4rem;
+}
+@media (min-width: 768px) {
+  .p-form p {
+    margin-top: 76px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-form p {
+    margin-top: 100px;
+  }
+}
 .p-form__back i {
   margin-right: 8px;
   font-size: 2rem;
@@ -2411,6 +2424,7 @@ body.is-open {
   transform: translateX(-8px);
 }
 .p-form__back input[type=button] {
+  margin-top: 56px;
   padding: 0;
   width: auto;
   display: inline-block;

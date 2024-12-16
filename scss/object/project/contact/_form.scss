@@ -86,17 +86,16 @@
   }
 
   &__btn {
-    margin: 40px auto 0;
+    margin: 32px auto 0;
     width: 24.5rem;
     justify-content: stretch;
     font-weight: 700;
 
     @include breakpoint(tablet) {
-      margin-top: 50px;
+      margin-top: 40px;
       width: 30rem;
     }
     @include breakpoint(pc) {
-      margin-top: 100px;
       width: 34rem;
     }
 
@@ -173,6 +172,18 @@
     }
   }
 
+  p {
+    margin-top: 56px;
+    font-size: 1.4rem;
+
+    @include breakpoint(tablet) {
+      margin-top: 76px;
+    }
+    @include breakpoint(pc) {
+      margin-top: 100px;
+    }
+  }
+
   // 戻るボタン
   &__back {
 
@@ -190,6 +201,7 @@
     }
 
     input[type="button"] {
+      margin-top: 56px;
       padding: 0;
       width: auto;
       display: inline-block;
