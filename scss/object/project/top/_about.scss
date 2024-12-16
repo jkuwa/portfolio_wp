@@ -39,6 +39,7 @@
     svg {
       width:229px;
       height: 315px;
+      transform: translateZ(0);
 
       @include breakpoint(tablet) {
         width: 250px;

@@ -1511,6 +1511,7 @@ body.is-open {
 .p-about__img svg {
   width: 229px;
   height: 315px;
+  transform: translateZ(0);
 }
 @media (min-width: 768px) {
   .p-about__img svg {
