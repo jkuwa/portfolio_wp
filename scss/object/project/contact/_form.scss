@@ -85,6 +85,38 @@
     min-height: 200px;
   }
 
+  // プライバシーポリシーの同意
+  span[data-name="privacy-policy"] {
+    margin-top: 56px;
+    display: block;
+    text-align: center;
+
+    @include breakpoint(tablet) {
+      margin-top: 76px;
+    }
+    @include breakpoint(pc) {
+      margin-top: 100px;
+
+      label, span {
+        display: inline;
+      } 
+    }
+
+    span {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+  
+
   &__btn {
     margin: 32px auto 0;
     width: 24.5rem;

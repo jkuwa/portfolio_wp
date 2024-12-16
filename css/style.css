@@ -2319,6 +2319,34 @@ body.is-open {
 .p-form textarea {
   min-height: 200px;
 }
+.p-form span[data-name=privacy-policy] {
+  margin-top: 56px;
+  display: block;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .p-form span[data-name=privacy-policy] {
+    margin-top: 76px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-form span[data-name=privacy-policy] {
+    margin-top: 100px;
+  }
+  .p-form span[data-name=privacy-policy] label, .p-form span[data-name=privacy-policy] span {
+    display: inline;
+  }
+}
+.p-form span[data-name=privacy-policy] span {
+  margin: 0;
+  font-size: 1.6rem;
+}
+.p-form span[data-name=privacy-policy] input[type=checkbox] {
+  width: auto;
+}
+.p-form span[data-name=privacy-policy] a {
+  text-decoration: underline;
+}
 .p-form__btn {
   margin: 32px auto 0;
   width: 24.5rem;
