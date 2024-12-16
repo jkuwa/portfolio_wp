@@ -6,11 +6,16 @@
       while ( have_posts() ):
         the_post(); ?>
 
-    <section <?php post_class('p-contact'); ?>>
+    <section <?php post_class('p-contact u-page'); ?>>
       <div class="p-secTitle js-target">
         <div class="p-secTitle__star">
           <span class="c-star -left"></span>
-          <h2><span><?php the_title(); ?></span></h2>
+          <h1>
+            <span><?php the_title(); ?></span>
+            <?php if ( get_field('sub_title') ):
+              the_field('sub_title');
+            endif; ?>
+          </h1>
           <span class="c-star -right"></span>
         </div>
       </div>

@@ -17,7 +17,7 @@
       <div class="p-secTitle js-target">
         <div class="p-secTitle__star">
           <span class="c-star -left"></span>
-          <h2><span>contact</span>お問い合わせ</h2>
+          <h1><span>contact</span>お問い合わせ</h1>
           <span class="c-star -right"></span>
         </div>
       </div>

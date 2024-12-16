@@ -1217,17 +1217,17 @@ body.is-open {
   position: relative;
   text-align: center;
 }
-.p-secTitle h2 {
+.p-secTitle h1, .p-secTitle h2 {
   position: relative;
   font-weight: 700;
   font-size: 1.2rem;
 }
 @media (min-width: 768px) {
-  .p-secTitle h2 {
+  .p-secTitle h1, .p-secTitle h2 {
     font-size: 1.6rem;
   }
 }
-.p-secTitle h2 span {
+.p-secTitle h1 span, .p-secTitle h2 span {
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -1238,12 +1238,12 @@ body.is-open {
   transform: scale(1, 0.8);
 }
 @media (min-width: 768px) {
-  .p-secTitle h2 span {
+  .p-secTitle h1 span, .p-secTitle h2 span {
     font-size: 8rem;
   }
 }
 @media (min-width: 1024px) {
-  .p-secTitle h2 span {
+  .p-secTitle h1 span, .p-secTitle h2 span {
     font-size: 8.8rem;
   }
 }
@@ -2515,6 +2515,19 @@ body.is-open {
   }
 }
 
+.u-page h1 > span {
+  font-size: min(9vw, 4.8rem);
+}
+@media (min-width: 768px) {
+  .u-page h1 > span {
+    font-size: 8rem;
+  }
+}
+@media (min-width: 1024px) {
+  .u-page h1 > span {
+    font-size: 8.8rem;
+  }
+}
 .u-page__body {
   margin-top: 80px;
 }
