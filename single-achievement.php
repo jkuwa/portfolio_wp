@@ -31,7 +31,7 @@
           <?php if ( get_field('site_url') ): ?>
             <div>
               <dt>URL：</dt>
-              <dd><a href="<?php the_field('site_url'); ?>" aria-label="<?php the_title(); ?>"><?php the_field('site_url'); ?></a></dd>
+              <dd><a href="<?php the_field('site_url'); ?>" aria-label="<?php the_title(); ?>" target="_blank" rel="noopener noreferrer"><?php the_field('site_url'); ?></a></dd>
             </div>
           <?php endif; ?>
           <?php if ( get_field('basic_authentication') ) : ?>
@@ -167,7 +167,7 @@
             <?php the_content(); ?>
           </div>
 
-          <a href="<?php the_field('site_url'); ?>" class="c-button--link c-shadow p-achievement__body--btn js-btn" aria-label="<?php the_title(); ?>">visit site</a>
+          <a href="<?php the_field('site_url'); ?>" class="c-button--link c-shadow p-achievement__body--btn js-btn" aria-label="<?php the_title(); ?>" target="_blank" rel="noopener noreferrer">visit site</a>
         </div>
       </section>
 
