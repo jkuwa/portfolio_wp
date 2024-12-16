@@ -1,0 +1,30 @@
+@use '../../foundation/variables' as *;
+
+.u-page__body {
+  margin-top: 80px;
+
+  @include breakpoint(tablet) {
+    margin-top: 120px;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 500;
+
+    &:not(:first-child) {
+      margin-top: 32px;
+    }
+  }
+
+  h2 + p {
+    margin-top: 16px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  ul {
+    margin-top: 8px;
+  }  
+}
