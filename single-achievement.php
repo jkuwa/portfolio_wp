@@ -102,7 +102,7 @@
                 <h2>制作期間</h2>
                 <dl>
 
-                <?php for ($i = 1; $i <= 3; $i++):
+                <?php for ($i = 1; $i <= 5; $i++):
                   $production = get_field("production0{$i}");
                   if ( empty($production) ) {
                     break;
