@@ -221,6 +221,7 @@ jQuery(function() {
 
 
   /* ---------- UFOスクロールアニメーション ---------- */
+  gsap.registerPlugin(ScrollTrigger);
   const ufo = document.querySelector(".js-ufo");
 
   // skills section
@@ -234,13 +235,17 @@ jQuery(function() {
       }
     });
 
-    tl.to( ufo, {
+    tl.fromTo( ufo, {
+      left: '100%',
+    }, {
       left: '-20%',
     })
       .to( ufo, {
         scaleX: -1,
       })
-      .to( ufo, {
+      .fromTo( ufo, {
+        left: '-20%',
+      }, {
         left: '100%',
       })
       .to( ufo, {
@@ -262,7 +267,10 @@ jQuery(function() {
     tl.add(() => {
       ufo.classList.add('is-animated');
     })
-      .to( ufo, {
+      .fromTo( ufo, {
+        left: '100%',
+        rotation: 0,
+      }, {
         left: '80%',
         rotation: 20,
       });
