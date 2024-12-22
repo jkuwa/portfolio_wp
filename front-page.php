@@ -3,7 +3,7 @@
   <main class="l-main">
 
     <!-- FIRST VIEW -->
-    <div class="p-fv">
+    <div id="home" class="p-fv">
       <div class="p-fv__title js-title">
         <span><?php bloginfo('description'); ?></span>
         <h1><?php echo bloginfo('name'); ?><br>portfolio</h1>
