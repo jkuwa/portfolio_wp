@@ -24,7 +24,7 @@
   function my_portfolio_script() {
     // css
     wp_enqueue_style('reset', get_theme_file_uri('/css/ress.css'));
-    wp_enqueue_style('my-style', get_theme_file_uri('/css/style.css'), array('reset'));
+    wp_enqueue_style('my-style', get_theme_file_uri('/css/style.min.css'), array('reset'));
 
     // font
     wp_enqueue_style('zen-maru', 'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
