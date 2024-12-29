@@ -9,7 +9,7 @@
         the_title(); ?>
     </h3>
     <figure class="c-shadow">
-      <?php the_post_thumbnail(); ?>
+      <?php the_post_thumbnail('medium'); ?>
     </figure>
   </article>
 </a>
