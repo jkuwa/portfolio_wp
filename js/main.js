@@ -2,7 +2,8 @@
 
 jQuery(function() {
   /* ---------- ハンバーガーメニュー ---------- */
-  jQuery(".js-hamburgerBtn").on('click', function() {
+  const menuBtn = jQuery(".js-hamburgerBtn");
+  menuBtn.on('click', function() {
     jQuery(this).toggleClass('is-open');
     jQuery(".js-nav").toggleClass('is-open');
     jQuery("body").toggleClass('is-open');
@@ -10,22 +11,22 @@ jQuery(function() {
 
     if (jQuery(this).text() === 'メニューを開く') {
       jQuery(".js-menu").text('メニューを閉じる');
-      jQuery(".js-hamburgerBtn").attr('aria-expanded', 'true');
+      menuBtn.attr('aria-expanded', 'true');
     } else {
       jQuery(".js-menu").text('メニューを開く');
-      jQuery(".js-hamburgerBtn").attr('aria-expanded', 'false');
+      menuBtn.attr('aria-expanded', 'false');
     }
   });
 
   // 最後の項目の後ハンバーガーボタンに戻る
   jQuery(".js-focusTrap").on('focus', function() {
-    if ( jQuery(".js-hamburgerBtn").hasClass('is-open') ) {
-    jQuery(".js-hamburgerBtn").focus();
+    if ( menuBtn.hasClass('is-open') ) {
+    menuBtn.focus();
     }
   });
 
   const close = () => {
-    jQuery(".js-hamburgerBtn").removeClass('is-open').attr('aria-expanded', 'false');
+    menuBtn.removeClass('is-open').attr('aria-expanded', 'false');
     jQuery(".js-nav").removeClass('is-open');
     jQuery("body").removeClass('is-open');
     jQuery(".c-cover").removeClass('is-open');
@@ -34,7 +35,7 @@ jQuery(function() {
   
   // Escキーでメニュー閉じる
   jQuery(document).keydown( function(e) {
-    if ( e.which === 27 && jQuery(".js-hamburgerBtn").hasClass('is-open') ) {
+    if ( e.which === 27 && menuBtn.hasClass('is-open') ) {
       e.preventDefault();
       close();
     }
@@ -42,21 +43,21 @@ jQuery(function() {
 
   // メニューの外をクリックした時にも閉じる
   jQuery(".js-cover").on('click', function() {
-    if ( jQuery(".js-hamburgerBtn").hasClass('is-open') ) {
+    if ( menuBtn.hasClass('is-open') ) {
       close();
     }
   });
   
   // リサイズでメニュー閉じる
   jQuery(window).on('resize', function() {
-    if ( jQuery(".js-hamburgerBtn").hasClass('is-open') ) {
+    if ( menuBtn.hasClass('is-open') ) {
       close();
     }
   });
   
   // ページ内リンクでメニューを閉じる
   jQuery(".js-nav a").on('click', function() {
-    if ( jQuery(".js-hamburgerBtn").hasClass('is-open') ) {
+    if ( menuBtn.hasClass('is-open') ) {
       close();
     }
   });
