@@ -58,3 +58,6 @@
 // ----- utility -----
 @use "object/utility/archiveSec";
 @use "object/utility/page";
+
+/* ----- reCAPTCHA ----- */
+.grecaptcha-badge { visibility: hidden; }

@@ -31,17 +31,33 @@
     }
   }
 
-  small {
+  &__reCaptcha {
     margin-top: 18px;
-    display: inline-block;
-    font-size: 1rem;
+    font-size: 1.2rem;
 
     @include breakpoint(tablet) {
       margin-top: 23px;
-      font-size: 1.2rem;
+
+      br {
+        display: none;
+      }
     }
     @include breakpoint(pc) {
       margin-top: 30px;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  small {
+    margin-top: 8px;
+    display: inline-block;
+    font-size: 1.2rem;
+
+    @include breakpoint(tablet) {
+      font-size: 1.4rem;
     }
   }
 }
