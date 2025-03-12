@@ -1,10 +1,11 @@
 <?php
-  // テーマサポート
+  // ---------  テーマサポート --------- 
   add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
   add_theme_support('automatic-feed-links');
   
-  // タイトル変更
+
+  // --------- タイトル変更 --------- 
   function my_portfolio_title($title) {
     $post_title = single_post_title('', false);
     $site_title = get_bloginfo('name', 'display');
@@ -20,7 +21,7 @@
   add_filter('pre_get_document_title', 'my_portfolio_title');
   
 
-  // ファイル読み込み
+  // --------- ファイル読み込み ---------
   function my_portfolio_script() {
     // css
     wp_enqueue_style('reset', get_theme_file_uri('/css/ress.css'));
@@ -39,7 +40,7 @@
   add_action('wp_enqueue_scripts', 'my_portfolio_script');
   
 
-  // メニュー登録
+  // --------- メニュー登録 ---------
   function my_portfolio_menu() {
     register_nav_menus( array(
       'main_menu' => 'Main Menu',
@@ -63,7 +64,7 @@
   }
 
 
-  // テーマカスタマイザー追加
+  // --------- テーマカスタマイザー追加 ---------
   function my_portfolio_customize_register($wp_customize) {
 
     // SNS設定
@@ -101,3 +102,50 @@
     return false;
   }
   add_filter('wpcf7_autop_or_not', 'my_portfolio_wpcf7_autop');
+
+
+  // --------- OGPタグ設定 ---------
+  function my_portfolio_ogp() {
+    if ( is_front_page() || is_home() || is_singular() ) {
+      global $post;
+      $ogp_title = '';
+      $ogp_desc = '';
+      $ogp_url = '';
+      $ogp_img = '';
+      $insert = '';
+      $def_desc = 'Webサイト制作を中心に、コーディングからWordPress開発まで対応可能なフリーランスコーダー「くわじゅんな」のポートフォリオです。';
+
+      // 記事・固定ページ
+      if ( is_singular() ) {
+        $ogp_title = get_the_title() . ' | ' . get_bloginfo('name', 'display') . ' portfolio';
+        $ogp_desc = mb_strimwidth( get_the_excerpt(), 0, 100, '...', 'UTF-8');
+        $ogp_url = get_permalink();
+      // フロントページ
+      } elseif ( is_front_page() || is_home() ) {
+        $ogp_title = get_bloginfo('name') . ' portfolio';
+        $ogp_desc = $def_desc;
+        $ogp_url = home_url();
+      }
+    }
+
+    // og:type
+    $ogp_type = ( is_front_page() || is_home() ) ? 'website' : 'article';
+
+    // og:image
+    $ogp_img = get_theme_file_uri('screenshot.png');
+
+    // 出力するOGPタグ
+    $insert .= '<meta property="og:locale" content="ja_JP">' . "\n";
+    $insert .= '<meta property="og:type" content="' . $ogp_type . '">' . "\n";
+    $insert .= '<meta property="og:title" content="' . esc_attr($ogp_title) . '">' . "\n";
+    $insert .= '<meta property="og:description" content="' . esc_attr($ogp_desc) . '">' . "\n";
+    $insert .= '<meta property="og:url" content="' . esc_url($ogp_url) . '">' . "\n";
+    $insert .= '<meta property="og:image" content="' . esc_url($ogp_img) . '">' . "\n";
+    $insert .= '<meta property="og:site_name" content="' . esc_attr($ogp_title) . '">' . "\n";
+    $insert .= '<meta name="twitter:card" content="summary_large_image">' . "\n";
+    $insert .= '<meta name="twitter:site" content="@jnkw10">' . "\n";
+
+    echo $insert;
+  }
+
+  add_action('wp_head', 'my_portfolio_ogp');

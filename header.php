@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Webサイト制作を中心に、コーディングからWordPress開発まで対応可能なフリーランスコーダーのポートフォリオです。">
+  <meta name="description" content="Webサイト制作を中心に、コーディングからWordPress開発まで対応可能なフリーランスコーダー「くわじゅんな」のポートフォリオです。">
 
   <?php wp_head(); ?>
 </head>
