@@ -58,6 +58,17 @@
     }
   }
   add_action('wp_enqueue_scripts', 'my_portfolio_script');
+
+
+  // --------- 最大画像読み込み優先 ---------
+  function my_portfolio_preload() {
+    if ( is_front_page() || is_home() ) {
+      ?>
+      <link rel="preload" href="<?php echo esc_url( get_theme_file_uri('images/bg-fv_rocketBoy.svg') ); ?>" as="image">
+      <?php
+    }
+  }
+  add_action('wp_head', 'my_portfolio_preload');
   
 
   // --------- メニュー登録 ---------
