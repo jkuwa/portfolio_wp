@@ -1,9 +1,6 @@
 /* ----- first view ----- */
 .p-fv {
   padding: 120px 0 158px;
-  width: 100%;
-  min-height: 100vh;
-  background: url(../images/fv_bg.png) top left/1125px #FCEF89;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -19,6 +19,21 @@
     return $title;
   }
   add_filter('pre_get_document_title', 'my_portfolio_title');
+
+
+  // --------- Critical CSS インライン化 ---------
+  function my_portfolio_critical_css() {
+    if ( is_front_page() || is_home() ) {
+      $bg_img_url = esc_url( get_theme_file_uri('/images/fv_bg.png') );
+      echo '<style>
+        .p-hamburgerBtn{margin-left:auto;width:50px;position:relative;z-index:50}.p-hamburgerBtn__bar,.p-hamburgerBtn::before,.p-hamburgerBtn::after{margin:0 auto;position:absolute;right:0;left:0;width:24px;height:4px;border-radius:2px;background:#fff;top:calc(50% - 2px);font-size:0}.p-hamburgerBtn::before,.p-hamburgerBtn::after{content:"";transition:transform .3s}.p-hamburgerBtn::before{top:14px}.p-hamburgerBtn::after{top:32px}.p-fv{width:100%;min-height:100vh;background:url("' . $bg_img_url . '") top left/1125px #fcef89}
+      </style>';
+      ?>
+      <link rel="preload" href="<?php echo esc_url( get_theme_file_uri('images/bg-fv_rocketBoy.svg') ); ?>" as="image">
+      <?php
+    }
+  }
+  add_action('wp_head', 'my_portfolio_critical_css', 5);
   
 
   // --------- ファイル読み込み ---------
@@ -58,17 +73,6 @@
     }
   }
   add_action('wp_enqueue_scripts', 'my_portfolio_script');
-
-
-  // --------- 最大画像読み込み優先 ---------
-  function my_portfolio_preload() {
-    if ( is_front_page() || is_home() ) {
-      ?>
-      <link rel="preload" href="<?php echo esc_url( get_theme_file_uri('images/bg-fv_rocketBoy.svg') ); ?>" as="image">
-      <?php
-    }
-  }
-  add_action('wp_head', 'my_portfolio_preload');
   
 
   // --------- メニュー登録 ---------
