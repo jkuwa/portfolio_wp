@@ -92,7 +92,7 @@
       $aria_label = !empty($data_object -> title) ? esc_attr($data_object -> title) : '';
 
       $output .= '<li class="' . esc_attr($class) . '">';
-      $output .= '<a href="' . esc_url($data_object -> url) . '"aria-label=' . $aria_label. '>';
+      $output .= '<a href="' . esc_url($data_object -> url) . '" aria-label=' . $aria_label. '>';
       $output .= esc_html($data_object -> title);
       $output .= '</a>';
     }  
