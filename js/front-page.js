@@ -37,6 +37,16 @@
   }
 
 
+  /* ---------- フォント読み込み ---------- */
+  document.addEventListener('DOMContentLoaded', () => {
+    const zenMaruStyle = document.querySelector('link[media="print"]');
+    
+    if (zenMaruStyle) {
+      zenMaruStyle.setAttribute('media', 'all');
+    }
+  });
+
+
   /* ---------- UFOスクロールアニメーション ---------- */
   gsap.registerPlugin(ScrollTrigger);
   const ufo = document.querySelector(".js-ufo");
@@ -117,16 +127,14 @@
 
 
   /* ---------- フロントページのみ実施 ---------- */
-  if (this.location.pathname === '/') {
-    // ファーストビューアニメーション
-    initScrollTriggerFirstView();
+  // ファーストビューアニメーション
+  initScrollTriggerFirstView();
 
-    // UFOアニメーション
-    initScrollTriggerSkills();
-    initScrollTriggerWorks();
-    initScrollTriggerContact();
+  // UFOアニメーション
+  initScrollTriggerSkills();
+  initScrollTriggerWorks();
+  initScrollTriggerContact();
 
-    // skillsセクション
-    magicGrid.listen();
-  }
+  // skillsセクション
+  magicGrid.listen();
 }

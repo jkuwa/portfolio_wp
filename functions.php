@@ -24,8 +24,14 @@
   // --------- ファイル読み込み ---------
   function my_portfolio_script() {
     // font
-    wp_enqueue_style('zen-maru', 'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
     wp_enqueue_style('lilita-one', 'https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+    // フロントページでzen maru gothic の読み込みを遅らせる
+    if ( is_front_page() || is_home() ) {
+      wp_enqueue_style('zen-maru', 'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap', array(), false, 'print');
+    } else {
+      wp_enqueue_style('zen-maru', 'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
+    }
 
     // css
     wp_enqueue_style('reset', get_theme_file_uri('/css/ress.css'));
@@ -33,6 +39,8 @@
 
     if ( is_front_page() || is_home() ) {  // TOPページ
       wp_enqueue_style( 'top-style', get_theme_file_uri('/css/top.min.css'), array('reset'));
+      // Gutenberg用のCSSを読み込まない
+      wp_deregister_style( 'wp-block-library' );
     } elseif ( is_page() ) {  // contactページ
       wp_enqueue_style( 'contact-style', get_theme_file_uri('/css/contact.min.css'), array('reset'));
     } elseif ( is_singular('achievement') ) {  // 実績ページ
