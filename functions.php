@@ -23,19 +23,31 @@
 
   // --------- ファイル読み込み ---------
   function my_portfolio_script() {
-    // css
-    wp_enqueue_style('reset', get_theme_file_uri('/css/ress.css'));
-    wp_enqueue_style('my-style', get_theme_file_uri('/css/style.min.css'), array('reset'));
-
     // font
     wp_enqueue_style('zen-maru', 'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
     wp_enqueue_style('lilita-one', 'https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
+    // css
+    wp_enqueue_style('reset', get_theme_file_uri('/css/ress.css'));
+    wp_enqueue_style('my-style', get_theme_file_uri('/css/style.min.css'), array('reset'));
+
+    if ( is_front_page() || is_home() ) {  // TOPページ
+      wp_enqueue_style( 'top-style', get_theme_file_uri('/css/top.min.css'), array('reset'));
+    } elseif ( is_page() ) {  // contactページ
+      wp_enqueue_style( 'contact-style', get_theme_file_uri('/css/contact.min.css'), array('reset'));
+    } elseif ( is_singular('achievement') ) {  // 実績ページ
+      wp_enqueue_style( 'achievement-style', get_theme_file_uri('/css/achievement.min.css'), array('reset'));
+    } 
+
     // JS
     wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js',array(), false, true);
-    wp_enqueue_script('scroll-trigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap'));
-    wp_enqueue_script('magic-grid', 'https://unpkg.com/magic-grid/dist/magic-grid.min.js', array('scroll-trigger'));
-    wp_enqueue_script('my-script', get_theme_file_uri('/js/main.js'), array('magic-grid'), false, true);
+    wp_enqueue_script('scroll-trigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap'), false, true);
+    wp_enqueue_script('my-script', get_theme_file_uri('/js/main.js'), array('scroll-trigger'), false, true);
+
+    if ( is_front_page() || is_home() ) {  // TOPページ
+      wp_enqueue_script('magic-grid', 'https://unpkg.com/magic-grid/dist/magic-grid.min.js', array('gsap'), false, true);
+      wp_enqueue_script( 'front-script', get_theme_file_uri('/js/front-page.js'), array('magic-grid'), false, true);
+    }
   }
   add_action('wp_enqueue_scripts', 'my_portfolio_script');
   

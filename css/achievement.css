@@ -1,0 +1,348 @@
+/* ----- achievement page ----- */
+.p-achievement {
+  padding: 80px 0 100px;
+}
+@media (min-width: 768px) {
+  .p-achievement {
+    padding: 150px 0 120px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-achievement {
+    padding-top: 180px;
+  }
+}
+.p-achievement h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+@media (min-width: 768px) {
+  .p-achievement h1 {
+    font-size: 4.8rem;
+  }
+}
+@media (min-width: 1024px) {
+  .p-achievement h1 {
+    font-size: 6.4rem;
+  }
+}
+.p-achievement dl > div {
+  display: flex;
+}
+.p-achievement__head > dl {
+  margin-top: 16px;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  .p-achievement__head > dl {
+    margin-top: 24px;
+  }
+}
+.p-achievement__head > dl dd + dd::before {
+  content: " / ";
+  white-space: pre;
+}
+.p-achievement__head a {
+  text-decoration: underline;
+}
+.p-achievement__head a:focus-visible {
+  border-radius: 2rem;
+}
+.p-achievement__head figure {
+  margin: 72px calc(50% - 50vw) 0;
+  width: 100vw;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .p-achievement__head figure {
+    margin: 100px 0 0;
+    width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .p-achievement__head figure {
+    margin: 30px 0 0 17.8%;
+    width: 86%;
+  }
+}
+.p-achievement__head figure img {
+  width: 85.6%;
+}
+@media (min-width: 768px) {
+  .p-achievement__head figure img {
+    width: 91.8%;
+  }
+}
+@media (min-width: 1024px) {
+  .p-achievement__head figure img {
+    width: 100%;
+  }
+}
+.p-achievement__note {
+  margin-top: 8px;
+  padding: 8px 16px;
+  border-radius: 15px;
+  background-color: #EBEBEB;
+  flex-direction: column;
+  font-size: 1.4rem;
+}
+.p-achievement__note dl {
+  padding-left: 16px;
+}
+.p-achievement__body {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+@media (min-width: 768px) {
+  .p-achievement__body {
+    margin-top: 120px;
+    gap: 80px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-achievement__body {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 120px;
+  }
+}
+.p-achievement__body--data {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+@media (min-width: 768px) {
+  .p-achievement__body--data {
+    gap: 80px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-achievement__body--data {
+    width: calc(52.8% - 80px);
+    gap: 64px;
+  }
+}
+.p-achievement__body--text {
+  padding: 45px max(30px, 9.8%);
+  width: 100%;
+  border-radius: 15px;
+  background-color: #FCFCD4;
+}
+@media (min-width: 768px) {
+  .p-achievement__body--text {
+    padding: 56px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-achievement__body--text {
+    padding-inline: 6%;
+    width: 47.2%;
+  }
+}
+.p-achievement__body--text p:not(:first-child) {
+  margin-top: 1.6rem;
+}
+.p-achievement__body--btn {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-inline: auto;
+  width: 25rem;
+}
+@media (min-width: 768px) {
+  .p-achievement__body--btn {
+    width: 30rem;
+  }
+}
+@media (min-width: 1024px) {
+  .p-achievement__body--btn {
+    width: 34rem;
+  }
+}
+
+/* ----- achievement detail ----- */
+.p-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+@media (min-width: 768px) {
+  .p-detail {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1024px) {
+  .p-detail {
+    flex-wrap: wrap;
+  }
+}
+.p-detail.-credits h2 {
+  font-size: 2.4rem;
+  line-height: 1.25;
+}
+.p-detail:not(:first-child) {
+  margin-top: 32px;
+}
+@media (min-width: 768px) {
+  .p-detail:not(:first-child) {
+    margin-top: 44px;
+  }
+}
+.p-detail h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .p-detail h2 {
+    padding-right: calc(40px - 0.8rem);
+    width: 170px;
+  }
+}
+@media (min-width: 768px) {
+  .p-detail dl, .p-detail ul {
+    min-width: 250px;
+    flex: 1;
+  }
+}
+.p-detail ul li {
+  display: inline-block;
+}
+.p-detail ul li:not(:first-child)::before {
+  content: " / ";
+}
+
+/* ----- archive section ----- */
+.p-archive {
+  padding-block: 100px;
+  background-color: #EBEBEB;
+}
+@media (min-width: 768px) {
+  .p-archive {
+    padding-bottom: 80px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-archive {
+    padding: 150px 0 120px;
+  }
+}
+.p-archive ul {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (min-width: 768px) {
+  .p-archive ul {
+    margin-top: 84px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-archive ul {
+    margin-top: 116px;
+    gap: 64px;
+  }
+}
+.p-archive ul > li {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .p-archive ul > li {
+    width: calc((100% - 50px) / 2);
+  }
+}
+@media (min-width: 1024px) {
+  .p-archive ul > li {
+    width: calc((100% - 64px) / 2);
+  }
+}
+.p-archive ul a:hover {
+  opacity: 1;
+}
+.p-archive ul a:hover figure {
+  transform: rotate(-10deg);
+}
+.p-archive__man {
+  width: clamp(129px, 34.4%, 161px);
+  aspect-ratio: 250/389;
+  position: absolute;
+  left: -51px;
+  bottom: -144.3px;
+  transform: translateX(-80%);
+}
+@media (min-width: 768px) {
+  .p-archive__man {
+    width: 161px;
+    left: -115px;
+    bottom: -154.3px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-archive__man {
+    width: 250px;
+    left: -223px;
+    bottom: -202.9px;
+  }
+}
+.p-archive__man.is-animated {
+  -webkit-animation: checkman 2.5s forwards;
+          animation: checkman 2.5s forwards;
+}
+.p-archive__man.is-animated .c-checkman__arm {
+  -webkit-animation: armMove 2.5s ease-in-out 2.5s infinite;
+          animation: armMove 2.5s ease-in-out 2.5s infinite;
+}
+
+/* ----- archive section ----- */
+.u-archiveSec h2 {
+  margin-top: 2px;
+}
+@media (min-width: 1024px) {
+  .u-archiveSec h2 {
+    margin-top: 0;
+  }
+}
+.u-archiveSec h2 span {
+  font-size: 3.2rem;
+}
+@media (min-width: 768px) {
+  .u-archiveSec h2 span {
+    font-size: 4.8rem;
+  }
+}
+@media (min-width: 1024px) {
+  .u-archiveSec h2 span {
+    font-size: 6.4rem;
+  }
+}
+.u-archiveSec__star {
+  margin-top: 0;
+}
+@media (min-width: 768px) {
+  .u-archiveSec__star {
+    width: 77.2px;
+  }
+}
+@media (min-width: 1024px) {
+  .u-archiveSec__star {
+    margin-top: 5px;
+    width: 92.7px;
+  }
+}
+.u-archiveSec__wrapper {
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .u-archiveSec__wrapper {
+    width: 64.8%;
+    max-width: 934px;
+  }
+}
+/*# sourceMappingURL=achievement.css.map */
