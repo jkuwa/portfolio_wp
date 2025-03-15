@@ -36,6 +36,8 @@
       }, '<');
   }
 
+  initScrollTriggerFirstView();
+
 
   /* ---------- フォント読み込み ---------- */
   document.addEventListener('DOMContentLoaded', () => {
@@ -117,6 +119,10 @@
     });
   }
 
+  initScrollTriggerSkills();
+  initScrollTriggerWorks();
+  initScrollTriggerContact();
+
 
   /* ---------- skills section グリッドレイアウト ---------- */
   const magicGrid = new MagicGrid({
@@ -125,16 +131,5 @@
     gutter: 35,
   });
 
-
-  /* ---------- フロントページのみ実施 ---------- */
-  // ファーストビューアニメーション
-  initScrollTriggerFirstView();
-
-  // UFOアニメーション
-  initScrollTriggerSkills();
-  initScrollTriggerWorks();
-  initScrollTriggerContact();
-
-  // skillsセクション
   magicGrid.listen();
 }
