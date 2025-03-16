@@ -1,33 +1,3 @@
-/* ----- hamburger button - critical ----- */
-.p-hamburgerBtn {
-  margin-left: auto;
-  width: 50px;
-  position: relative;
-  z-index: 50;
-}
-.p-hamburgerBtn__bar, .p-hamburgerBtn::before, .p-hamburgerBtn::after {
-  margin: 0 auto;
-  position: absolute;
-  right: 0;
-  left: 0;
-  width: 24px;
-  height: 4px;
-  border-radius: 2px;
-  background: #fff;
-  top: calc(50% - 2px);
-  font-size: 0;
-}
-.p-hamburgerBtn::before, .p-hamburgerBtn::after {
-  content: "";
-  transition: transform 0.3s;
-}
-.p-hamburgerBtn::before {
-  top: 14px;
-}
-.p-hamburgerBtn::after {
-  top: 32px;
-}
-
 /* ----- first view - critical ----- */
 .p-fv {
   width: 100%;
